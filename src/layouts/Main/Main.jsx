@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 // import clsx from 'clsx';
 import {makeStyles, useTheme} from '@material-ui/styles';
-import {Fab, useMediaQuery} from '@material-ui/core';
-import SettingsIcon from '@material-ui/icons/Settings';
+import {useMediaQuery} from '@material-ui/core';
 
-import {Sidebar} from './components';
+import {Topbar, Sidebar} from './components';
 
 /* const useStyles = makeStyles(theme => ({
     root: {
@@ -32,16 +31,13 @@ const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
     },
-    fab: {
-        position: 'absolute',
-        top: theme.spacing(1),
-        left: theme.spacing(1),
-        zIndex: 3000,
-    },
     content: {
         flexGrow: 1,
         height: '100vh',
         overflow: 'auto',
+    },
+    fakeToolbar: {
+        ...theme.mixins.toolbar,
     },
 }));
 
@@ -56,7 +52,7 @@ const Main = props => {
     const [openSidebar, setOpenSidebar] = useState(false);
     const [userToggledSidebar, setUserToggledSidebar] = useState(false);
 
-    const onSidebarOpen = () => {
+    const handleSidebarOpen = () => {
         setOpenSidebar(true);
         setUserToggledSidebar(true);
     };
@@ -71,22 +67,18 @@ const Main = props => {
 
     return (
         <div className={classes.root}>
+            <Topbar
+                isSidebarOpen={shouldOpenSidebar}
+                onSidebarOpen={handleSidebarOpen}
+                onSidebarClose={handleSidebarClose}
+            />
             <Sidebar
                 onClose={handleSidebarClose}
                 open={shouldOpenSidebar}
                 variant={isDesktop ? 'persistent' : 'temporary'}
             />
             <main className={classes.content}>
-                {!shouldOpenSidebar && (
-                    <Fab
-                        className={classes.fab}
-                        color="inherit"
-                        size="small"
-                        onClick={onSidebarOpen}
-                    >
-                        <SettingsIcon />
-                    </Fab>
-                )}
+                <div className={classes.fakeToolbar} />
                 {children}
             </main>
         </div>

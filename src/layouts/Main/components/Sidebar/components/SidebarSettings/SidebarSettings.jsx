@@ -1,9 +1,10 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/display-name */
-import React from 'react';
+import React, {useContext} from 'react';
 // import clsx from 'clsx';
 // import PropTypes from 'prop-types';
 // import {makeStyles} from '@material-ui/styles';
+import SettingsContext from '../../../../../../SettingsContext';
 
 /* const useStyles = makeStyles(theme => ({
     root: {},
@@ -41,6 +42,9 @@ import React from 'react';
 const SidebarSettings = props => {
     // const {className, ...rest} = props;
     // const classes = useStyles();
+    const settings = useContext(SettingsContext);
+
+    console.log('Settings: ', settings);
 
     /* return (
         <List {...rest} className={clsx(classes.root, className)}>

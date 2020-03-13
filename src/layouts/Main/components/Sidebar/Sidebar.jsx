@@ -2,8 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/styles';
-import {Divider, Drawer, IconButton} from '@material-ui/core';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import {Divider, Drawer} from '@material-ui/core';
 
 import {Info, SidebarSettings} from './components';
 
@@ -46,11 +45,6 @@ const useStyles = makeStyles(theme => ({
             display: 'none',
         },
     },
-    openIcon: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-    },
 }));
 
 const Sidebar = props => {
@@ -73,13 +67,7 @@ const Sidebar = props => {
             open={open}
             variant={variant}
         >
-            <div className={classes.toolbar}>
-                {open && (
-                    <IconButton color="inherit" onClick={onClose}>
-                        <ArrowBackIcon />
-                    </IconButton>
-                )}
-            </div>
+            <div className={classes.toolbar} />
             <div {...rest} className={clsx(classes.root, className)}>
                 <Info />
                 <Divider className={classes.divider} />
