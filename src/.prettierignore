@@ -1,0 +1,15 @@
+*.md
+.cache/*
+.package-lock.json
+.browserslistrc
+.editorconfig
+.env
+.gitignore
+.npmrc
+.nvmrc
+.prettierignore
+.stylelintrc
+src/images/*
+dist/*
+bin/deploy-branch-to-alpha.sh
+node_modules/*

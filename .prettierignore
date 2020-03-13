@@ -1,0 +1,14 @@
+*.md
+.package-lock.json
+.browserslistrc
+.editorconfig
+.env
+.gitignore
+.npmrc
+.nvmrc
+.prettierignore
+.stylelintrc
+src/images/*
+dist/*
+.cache/*
+node_modules/*

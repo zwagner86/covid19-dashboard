@@ -1,0 +1,94 @@
+{
+  "name": "react-parcel-app",
+  "version": "0.0.1",
+  "description": "Simple React + Parcel set up.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html",
+    "test": "jest",
+    "test:ci": "jest --ci --runInBand --reporters=default --reporters=jest-junit",
+    "prettier": "prettier --check \"**/*.*\"",
+    "prettier:write": "prettier --write \"**/*.*\"",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "lint:fix": "npm run lint -- --fix",
+    "stylelint": "stylelint 'src/**/*.scss'",
+    "stylelint:fix": "npm run stylelint -- --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*": [
+      "npm run prettier:write",
+      "git add"
+    ],
+    "src/**/*.{js,jsx}": [
+      "npm run lint"
+    ],
+    "src/**/*.scss": [
+      "npm run stylelint"
+    ]
+  },
+  "engines": {
+    "node": ">=10.16.1",
+    "npm": ">=6.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.3",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-decorators": "7.8.3",
+    "@babel/plugin-proposal-do-expressions": "7.8.3",
+    "@babel/plugin-proposal-export-default-from": "7.8.3",
+    "@babel/plugin-proposal-export-namespace-from": "7.8.3",
+    "@babel/plugin-proposal-function-sent": "7.8.3",
+    "@babel/plugin-proposal-logical-assignment-operators": "7.8.3",
+    "@babel/plugin-proposal-numeric-separator": "7.8.3",
+    "@babel/plugin-proposal-pipeline-operator": "7.8.3",
+    "@babel/plugin-proposal-throw-expressions": "7.8.3",
+    "@babel/plugin-syntax-import-meta": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.8.3",
+    "@babel/preset-env": "7.8.3",
+    "@babel/preset-react": "7.8.3",
+    "@babel/runtime-corejs3": "7.8.3",
+    "@spothero/eslint-config": "1.9.0",
+    "@spothero/stylelint-config": "1.4.0",
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.4.0",
+    "babel-jest": "24.9.0",
+    "husky": "4.2.3",
+    "jest": "24.9.0",
+    "jest-transform-stub": "2.0.0",
+    "lint-staged": "10.0.8",
+    "node-sass": "4.13.1",
+    "npm-run-all": "4.1.5",
+    "onchange": "6.1.0",
+    "parcel-bundler": "1.12.4",
+    "prettier": "1.19.1",
+    "react-hot-loader": "4.12.19",
+    "sass": "1.26.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "4.9.1",
+    "@material-ui/icons": "4.9.1",
+    "@material-ui/styles": "4.9.0",
+    "@types/react": "16.9.23",
+    "autoprefixer": "9.7.4",
+    "chart.js": "2.8.0",
+    "clsx": "1.1.0",
+    "core-js": "3.6.4",
+    "lodash": "4.17.15",
+    "material-table": "1.57.2",
+    "moment": "2.24.0",
+    "postcss-modules": "1.5.0",
+    "prop-types": "15.7.2",
+    "react": "16.13.0",
+    "react-chartjs-2": "2.7.6",
+    "react-dom": "16.13.0",
+    "react-perfect-scrollbar": "1.5.8",
+    "react-router-dom": "5.1.2",
+    "regenerator-runtime": "0.13.3"
+  }
+}

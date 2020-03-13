@@ -1,0 +1,99 @@
+import React from 'react';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import {makeStyles} from '@material-ui/styles';
+import {Divider, Drawer, IconButton} from '@material-ui/core';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
+import {Info, SidebarSettings} from './components';
+
+const useStyles = makeStyles(theme => ({
+    drawer: {
+        position: 'relative',
+        width: 240,
+        whiteSpace: 'nowrap',
+    },
+    drawerOpen: {
+        width: 240,
+        transition: theme.transitions.create('width', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+    },
+    drawerClose: {
+        transition: theme.transitions.create('width', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+        width: 0,
+    },
+    root: {
+        backgroundColor: theme.palette.white,
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        padding: theme.spacing(2),
+    },
+    divider: {
+        margin: theme.spacing(2, 0),
+    },
+    settings: {
+        marginBottom: theme.spacing(2),
+    },
+    toolbar: {
+        ...theme.mixins.toolbar,
+        [theme.breakpoints.down('md')]: {
+            display: 'none',
+        },
+    },
+    openIcon: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+    },
+}));
+
+const Sidebar = props => {
+    const {open, variant, onClose, className, ...rest} = props;
+    const classes = useStyles();
+
+    return (
+        <Drawer
+            className={clsx(classes.drawer, {
+                [classes.drawerOpen]: open,
+                [classes.drawerClose]: !open,
+            })}
+            classes={{
+                paper: clsx({
+                    [classes.drawerOpen]: open,
+                    [classes.drawerClose]: !open,
+                }),
+            }}
+            onClose={onClose}
+            open={open}
+            variant={variant}
+        >
+            <div className={classes.toolbar}>
+                {open && (
+                    <IconButton color="inherit" onClick={onClose}>
+                        <ArrowBackIcon />
+                    </IconButton>
+                )}
+            </div>
+            <div {...rest} className={clsx(classes.root, className)}>
+                <Info />
+                <Divider className={classes.divider} />
+                <SidebarSettings className={classes.settings} />
+            </div>
+        </Drawer>
+    );
+};
+
+Sidebar.propTypes = {
+    className: PropTypes.string,
+    onClose: PropTypes.func,
+    open: PropTypes.bool.isRequired,
+    variant: PropTypes.string.isRequired,
+};
+
+export default Sidebar;

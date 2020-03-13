@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "@spothero",
+        "plugin:prettier/recommended",
+        "prettier/babel",
+        "prettier/react"
+    ]
+}
