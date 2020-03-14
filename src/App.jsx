@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import moment from 'moment';
 import {Chart} from 'react-chartjs-2';
 import {ThemeProvider} from '@material-ui/styles';
 
@@ -15,11 +16,11 @@ Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
     draw: chartjs.draw,
 });
 
-const settings = {
+const initialSettings = {
     doublingTime: 3,
     population: 9500000,
     exposure: 100,
-    startDate: '2020-03-06',
+    startDate: moment('2020-03-06'),
     baseCases: 5,
     multiplier: 5,
     cutoffRiskPerDay: 5.0,
@@ -27,9 +28,11 @@ const settings = {
 };
 
 const App = props => {
+    const [settings, setSettings] = useState(initialSettings);
+
     return (
         <ThemeProvider theme={theme}>
-            <SettingsProvider value={settings}>
+            <SettingsProvider value={{settings, setSettings}}>
                 <MainLayout>
                     <Dashboard />
                 </MainLayout>
