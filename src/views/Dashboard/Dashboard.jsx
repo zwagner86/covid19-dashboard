@@ -7,6 +7,8 @@ import {makeStyles} from '@material-ui/styles';
 import {MaterialTable} from '../../components';
 import SettingsContext from '../../SettingsContext';
 import TabPanel from './components/TabPanel';
+import ProjectedCases from './components/charts/ProjectedCases';
+import Risk from './components/charts/Risk';
 
 const a11yProps = index => {
     return {
@@ -31,6 +33,11 @@ const useStyles = makeStyles(theme => ({
     cardsAtRiskTypography: {
         paddingBottom: theme.spacing(1),
     },
+    tabBar: {
+        flexGrow: 1,
+        maxWidth: 400,
+        margin: '0 auto',
+    },
 }));
 
 const Dashboard = props => {
@@ -53,31 +60,114 @@ const Dashboard = props => {
     };
     const projectionData = [];
     const riskData = [];
+    const projectionsChartData = {
+        labels: [],
+        datasets: [
+            {
+                label: 'Projected Cases',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: 'rgba(75,192,192,0.4)',
+                borderColor: 'rgba(75,192,192,1)',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: 'rgba(75,192,192,1)',
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [],
+            },
+        ],
+    };
+    const risk1PlusChartData = {
+        labels: [],
+        datasets: [
+            {
+                label: 'Risk 1-Plus Encounters',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: 'rgba(75,192,192,0.4)',
+                borderColor: 'rgba(75,192,192,1)',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: 'rgba(75,192,192,1)',
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [],
+            },
+        ],
+    };
+    const cumulativeRiskChartData = {
+        labels: [],
+        datasets: [
+            {
+                label: 'Cumulative Risk',
+                fill: false,
+                lineTension: 0.1,
+                /* backgroundColor: 'rgba(75,192,192,0.4)',
+                borderColor: 'rgba(75,192,192,1)',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: 'rgba(75,192,192,1)',
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10, */
+                data: [],
+            },
+        ],
+    };
 
     for (const index of range(50)) {
         // dates used for both projected and risk tables
         const dateMoment = moment(startDate).add(index, 'days');
-        const date = dateMoment.format('MM-DD-YYYY');
+        const date = dateMoment.format('MM/DD/YY');
+        const dateWithDay = dateMoment.format('MM/DD/YY ddd');
         const dayOfWeek = dateMoment.format('dddd');
         // projected calculations
         const doublings = index / doublingTime;
         const reportedCases =
             index === 0 ? baseCases : Math.pow(2, doublings) * baseCases;
         const projectedCases = reportedCases * multiplier;
+        const projectedCasesRounded = Math.round(projectedCases);
         const projectedRate = projectedCases / population;
         const projectedRatePercentage = `${(projectedRate * 100).toFixed(2)}%`;
         const projection = {
             date,
+            dateWithDay,
             dayOfWeek,
             reportedCases,
             reportedCasesRounded: Math.round(reportedCases),
             projectedCases,
-            projectedCasesRounded: Math.round(projectedCases),
+            projectedCasesRounded,
             projectedRate,
             projectedRatePercentage,
         };
 
         projectionData.push(projection);
+        projectionsChartData.labels.push(date);
+        projectionsChartData.datasets[0].data.push(projectedCasesRounded);
 
         const encountersPerDay = (projectedRate * exposure).toFixed(3);
         const risk1PlusEncounters = 1 - Math.pow(1 - projectedRate, exposure);
@@ -94,6 +184,7 @@ const Dashboard = props => {
         const cumulativeRiskPercentage = `${(cumulativeRisk * 100).toFixed()}%`;
         const risk = {
             date,
+            dateWithDay,
             dayOfWeek,
             encountersPerDay,
             risk1PlusEncounters,
@@ -105,11 +196,15 @@ const Dashboard = props => {
         };
 
         riskData.push(risk);
+        risk1PlusChartData.labels.push(date);
+        risk1PlusChartData.datasets[0].data.push(risk1PlusEncounters);
+        cumulativeRiskChartData.labels.push(date);
+        cumulativeRiskChartData.datasets[0].data.push(cumulativeRisk);
     }
 
     return (
         <div className={classes.root}>
-            <Paper square>
+            <Paper className={classes.tabBar} square>
                 <Tabs
                     value={activeTabIndex}
                     indicatorColor="primary"
@@ -134,8 +229,7 @@ const Dashboard = props => {
                 <MaterialTable
                     title="Projections"
                     columns={[
-                        {title: 'Date', field: 'date', type: 'date'},
-                        {title: 'Day of Week', field: 'dayOfWeek'},
+                        {title: 'Date', field: 'dateWithDay', type: 'date'},
                         {
                             title: 'Reported Cases',
                             field: 'reportedCasesRounded',
@@ -157,11 +251,11 @@ const Dashboard = props => {
                         showTitle: false,
                         sorting: false,
                         search: false,
-                        paging: false,
                         draggable: false,
                         exportButton: true,
                     }}
                 />
+                <ProjectedCases chartData={projectionsChartData} />
             </TabPanel>
             <TabPanel value={activeTabIndex} index={1}>
                 <Typography
@@ -176,8 +270,7 @@ const Dashboard = props => {
                 <MaterialTable
                     title="Risk"
                     columns={[
-                        {title: 'Date', field: 'date', type: 'date'},
-                        {title: 'Day of Week', field: 'dayOfWeek'},
+                        {title: 'Date', field: 'dateWithDay', type: 'date'},
                         {
                             title: 'Encounters Per Day',
                             field: 'encountersPerDay',
@@ -204,10 +297,19 @@ const Dashboard = props => {
                         showTitle: false,
                         sorting: false,
                         search: false,
-                        paging: false,
                         draggable: false,
                         exportButton: true,
                     }}
+                />
+                <Risk
+                    title="Risk 1-Plus Encounters"
+                    type="1plus"
+                    chartData={risk1PlusChartData}
+                />
+                <Risk
+                    title="Cumulative Risk"
+                    type="cumulative"
+                    chartData={cumulativeRiskChartData}
                 />
             </TabPanel>
             {false && (
