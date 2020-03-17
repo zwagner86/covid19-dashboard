@@ -16,11 +16,11 @@ import {
 
 const useStyles = makeStyles(theme => ({
     root: {
-        marginTop: theme.spacing(4),
         height: '100%',
     },
     chartContainer: {
         position: 'relative',
+        height: 400,
     },
 }));
 
@@ -52,6 +52,7 @@ const ProjectedCases = props => {
                 },
             ],
         },
+        maintainAspectRatio: false,
     };
 
     if (lineType === 'linear') {
