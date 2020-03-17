@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import moment from 'moment';
+import queryString from 'query-string';
 import {Chart} from 'react-chartjs-2';
 import {ThemeProvider} from '@material-ui/styles';
 
@@ -16,6 +17,7 @@ Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
     draw: chartjs.draw,
 });
 
+const {disableForm} = queryString.parse(location.search, {parseBooleans: true});
 const startDate = moment('2020-03-06');
 
 const initialSettings = {
@@ -36,7 +38,7 @@ const App = props => {
     return (
         <ThemeProvider theme={theme}>
             <SettingsProvider value={{settings, setSettings}}>
-                <MainLayout>
+                <MainLayout disableForm={disableForm}>
                     <Dashboard />
                 </MainLayout>
             </SettingsProvider>

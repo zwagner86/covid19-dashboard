@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Main = props => {
-    const {children} = props;
+    const {children, disableForm} = props;
     const classes = useStyles();
     const theme = useTheme();
     const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
@@ -76,6 +76,7 @@ const Main = props => {
                 onClose={handleSidebarClose}
                 open={shouldOpenSidebar}
                 variant={isDesktop ? 'persistent' : 'temporary'}
+                disableForm={disableForm}
             />
             <main className={classes.content}>
                 <div className={classes.fakeToolbar} />
@@ -87,6 +88,7 @@ const Main = props => {
 
 Main.propTypes = {
     children: PropTypes.node,
+    disableForm: PropTypes.bool,
 };
 
 export default Main;

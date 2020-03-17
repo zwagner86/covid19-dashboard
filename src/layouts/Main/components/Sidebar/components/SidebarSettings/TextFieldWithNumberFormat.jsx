@@ -4,15 +4,16 @@ import {TextField} from 'formik-material-ui';
 import NumberFormat from 'react-number-format';
 
 const NumberFormatCustom = props => {
-    console.log(props);
     const {inputRef, onChange, ...other} = props;
+    const {name} = other;
     const otherProps = {};
 
     if (onChange) {
         otherProps.onValueChange = values => {
             onChange({
                 target: {
-                    value: values.value,
+                    value: values.floatValue,
+                    name,
                 },
             });
         };
@@ -27,7 +28,6 @@ NumberFormatCustom.propTypes = {
 };
 
 const TextFieldWithNumberFormat = props => {
-    console.log(props);
     const {InputProps = {}, ...other} = props;
 
     InputProps.inputComponent = NumberFormatCustom;

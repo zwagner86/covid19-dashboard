@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Sidebar = props => {
-    const {open, variant, onClose, className, ...rest} = props;
+    const {open, variant, onClose, className, disableForm, ...rest} = props;
     const classes = useStyles();
 
     return (
@@ -74,7 +74,10 @@ const Sidebar = props => {
             <div {...rest} className={clsx(classes.root, className)}>
                 <Info />
                 <Divider className={classes.divider} />
-                <SidebarSettings className={classes.settings} />
+                <SidebarSettings
+                    className={classes.settings}
+                    disableForm={disableForm}
+                />
             </div>
         </Drawer>
     );
@@ -85,6 +88,7 @@ Sidebar.propTypes = {
     onClose: PropTypes.func,
     open: PropTypes.bool.isRequired,
     variant: PropTypes.string.isRequired,
+    disableForm: PropTypes.bool,
 };
 
 export default Sidebar;

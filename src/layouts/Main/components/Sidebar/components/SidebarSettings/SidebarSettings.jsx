@@ -4,7 +4,7 @@ import isNil from 'lodash/isNil';
 import React, {useContext} from 'react';
 // import clsx from 'clsx';
 // import moment from 'moment';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/styles';
 import {
     Button,
@@ -18,6 +18,7 @@ import {DatePicker} from 'formik-material-ui-pickers';
 import {MuiPickersUtilsProvider} from '@material-ui/pickers';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import MomentUtils from '@date-io/moment';
+import TextFieldWithNumberFormat from './TextFieldWithNumberFormat';
 import SettingsContext from '../../../../../../SettingsContext';
 
 const useStyles = makeStyles(theme => ({
@@ -31,8 +32,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const SidebarSettings = props => {
-    // const {className, ...rest} = props;
+const SidebarSettings = ({disableForm}) => {
     const classes = useStyles();
     const {settings, setSettings} = useContext(SettingsContext);
 
@@ -79,6 +79,8 @@ const SidebarSettings = props => {
                         errors.numberOfDays = 'This is a required field.';
                     } else if (numberOfDays < 1) {
                         errors.numberOfDays = 'Value must be 1 or greater.';
+                    } else if (numberOfDays > 365) {
+                        errors.numberOfDays = 'Value must be 365 or less.';
                     }
 
                     // baseCases errors
@@ -147,15 +149,15 @@ const SidebarSettings = props => {
                                     min: 1,
                                     max: 3,
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
                             <Field
                                 className={classes.field}
-                                component={TextField}
+                                component={TextFieldWithNumberFormat}
                                 name="population"
                                 label="Population"
-                                type="number"
                                 InputProps={{
                                     endAdornment: (
                                         <InputAdornment position="end">
@@ -172,16 +174,17 @@ const SidebarSettings = props => {
                                 }}
                                 inputProps={{
                                     min: 1,
+                                    thousandSeparator: true,
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
                             <Field
                                 className={classes.field}
-                                component={TextField}
+                                component={TextFieldWithNumberFormat}
                                 name="exposure"
                                 label="Exposure"
-                                type="number"
                                 placeholder="100"
                                 InputProps={{
                                     endAdornment: (
@@ -199,7 +202,9 @@ const SidebarSettings = props => {
                                 }}
                                 inputProps={{
                                     min: 0,
+                                    thousandSeparator: true,
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
@@ -208,6 +213,7 @@ const SidebarSettings = props => {
                                 component={DatePicker}
                                 name="startDate"
                                 label="Start Date"
+                                format="MMMM Do YYYY"
                                 InputProps={{
                                     endAdornment: (
                                         <InputAdornment position="end">
@@ -222,6 +228,7 @@ const SidebarSettings = props => {
                                         </InputAdornment>
                                     ),
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
@@ -248,7 +255,9 @@ const SidebarSettings = props => {
                                 }}
                                 inputProps={{
                                     min: 1,
+                                    max: 365,
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
@@ -276,6 +285,7 @@ const SidebarSettings = props => {
                                 inputProps={{
                                     min: 0,
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
@@ -303,15 +313,15 @@ const SidebarSettings = props => {
                                 inputProps={{
                                     min: 1,
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
                             <Field
                                 className={classes.field}
-                                component={TextField}
+                                component={TextFieldWithNumberFormat}
                                 name="cutoffRiskPerDay"
                                 label="Risk Per Day"
-                                type="number"
                                 placeholder="5"
                                 InputProps={{
                                     endAdornment: (
@@ -330,16 +340,20 @@ const SidebarSettings = props => {
                                 inputProps={{
                                     step: '0.01',
                                     min: 0,
+                                    max: 100,
+                                    decimalScale: 2,
+                                    fixedDecimalScale: true,
+                                    suffix: '%',
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
                             <Field
                                 className={classes.field}
-                                component={TextField}
+                                component={TextFieldWithNumberFormat}
                                 name="cutoffRiskCumulative"
                                 label="Cumulative Risk"
-                                type="number"
                                 InputProps={{
                                     endAdornment: (
                                         <InputAdornment position="end">
@@ -357,7 +371,12 @@ const SidebarSettings = props => {
                                 inputProps={{
                                     step: '0.01',
                                     min: 0,
+                                    max: 100,
+                                    decimalScale: 2,
+                                    fixedDecimalScale: true,
+                                    suffix: '%',
                                 }}
+                                disabled={disableForm}
                                 required
                             />
                             <br />
@@ -366,7 +385,9 @@ const SidebarSettings = props => {
                             <Button
                                 variant="contained"
                                 color="primary"
-                                disabled={isSubmitting || !isValid}
+                                disabled={
+                                    disableForm || isSubmitting || !isValid
+                                }
                                 onClick={submitForm}
                                 fullWidth
                             >
@@ -381,7 +402,7 @@ const SidebarSettings = props => {
 };
 
 SidebarSettings.propTypes = {
-    // className: PropTypes.string,
+    disableForm: PropTypes.bool,
 };
 
 export default SidebarSettings;
