@@ -10,12 +10,6 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         minHeight: 'fit-content',
     },
-    title: {
-        marginBottom: theme.spacing(1),
-    },
-    info: {
-        marginTop: theme.spacing(1),
-    },
 }));
 
 const Info = props => {
@@ -24,8 +18,7 @@ const Info = props => {
 
     return (
         <div {...rest} className={clsx(classes.root, className)}>
-            <div className={classes.title}>Covid-19</div>
-            <div className={classes.info}>Info for settings form here</div>
+            <div className={classes.title}>COVID-19 Model Settings</div>
         </div>
     );
 };

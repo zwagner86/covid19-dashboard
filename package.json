@@ -93,8 +93,10 @@
     "react": "16.13.0",
     "react-chartjs-2": "2.7.6",
     "react-dom": "16.13.0",
+    "react-number-format": "4.4.1",
     "react-perfect-scrollbar": "1.5.8",
     "react-router-dom": "5.1.2",
+    "react-text-mask": "5.4.3",
     "regenerator-runtime": "0.13.3"
   }
 }

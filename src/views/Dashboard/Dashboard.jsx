@@ -48,6 +48,7 @@ const Dashboard = props => {
             population,
             exposure,
             startDate,
+            numberOfDays,
             baseCases,
             multiplier,
             // cutoffRiskPerDay,
@@ -139,7 +140,7 @@ const Dashboard = props => {
         ],
     };
 
-    for (const index of range(50)) {
+    for (const index of range(numberOfDays)) {
         // dates used for both projected and risk tables
         const dateMoment = moment(startDate).add(index, 'days');
         const date = dateMoment.format('MM/DD/YY');

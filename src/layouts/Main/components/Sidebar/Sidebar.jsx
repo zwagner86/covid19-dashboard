@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/styles';
-import {Divider, Drawer} from '@material-ui/core';
+import {colors, Divider, Drawer} from '@material-ui/core';
 
 import {Info, SidebarSettings} from './components';
 
@@ -11,6 +11,9 @@ const useStyles = makeStyles(theme => ({
         position: 'relative',
         width: 240,
         whiteSpace: 'nowrap',
+    },
+    drawerPaper: {
+        backgroundColor: colors.grey[50],
     },
     drawerOpen: {
         width: 240,
@@ -27,7 +30,6 @@ const useStyles = makeStyles(theme => ({
         width: 0,
     },
     root: {
-        backgroundColor: theme.palette.white,
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
@@ -35,6 +37,7 @@ const useStyles = makeStyles(theme => ({
     },
     divider: {
         margin: theme.spacing(2, 0),
+        backgroundColor: colors.grey[900],
     },
     settings: {
         marginBottom: theme.spacing(2),
@@ -58,7 +61,7 @@ const Sidebar = props => {
                 [classes.drawerClose]: !open,
             })}
             classes={{
-                paper: clsx({
+                paper: clsx(classes.drawerPaper, {
                     [classes.drawerOpen]: open,
                     [classes.drawerClose]: !open,
                 }),
