@@ -1,3 +1,4 @@
+import find from 'lodash/find';
 import React, {useState} from 'react';
 import moment from 'moment';
 import queryString from 'query-string';
@@ -6,6 +7,7 @@ import {ThemeProvider} from '@material-ui/styles';
 
 import {chartjs} from './helpers';
 import theme from './theme';
+import metros from './data/metros';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './App.scss';
 
@@ -17,12 +19,16 @@ Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
     draw: chartjs.draw,
 });
 
-const {disableForm} = queryString.parse(location.search, {parseBooleans: true});
+const {disableForm, metro: metroName} = queryString.parse(location.search, {
+    parseBooleans: true,
+});
+const metro = find(metros, {key: metroName}) || metros[0];
 const startDate = moment('2020-03-06');
 
 const initialSettings = {
     doublingTime: 3,
-    population: 9500000,
+    metroKey: metro.key,
+    population: metro.population,
     exposure: 100,
     startDate,
     numberOfDays: 30,

@@ -19,13 +19,14 @@ import {MuiPickersUtilsProvider} from '@material-ui/pickers';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import MomentUtils from '@date-io/moment';
 import TextFieldWithNumberFormat from './TextFieldWithNumberFormat';
+import MetroSelect from './MetroSelect';
 import SettingsContext from '../../../../../../SettingsContext';
 
 const useStyles = makeStyles(theme => ({
     root: {},
     field: {
         width: '100%',
-        paddingBottom: theme.spacing(2),
+        marginBottom: theme.spacing(2),
     },
     helpIcon: {
         fontSize: '1.2rem',
@@ -39,7 +40,9 @@ const SidebarSettings = ({disableForm}) => {
     return (
         <MuiPickersUtilsProvider utils={MomentUtils}>
             <Formik
-                initialValues={settings}
+                initialValues={{
+                    ...settings,
+                }}
                 validate={values => {
                     const {
                         doublingTime,
@@ -149,6 +152,14 @@ const SidebarSettings = ({disableForm}) => {
                                     min: 1,
                                     max: 3,
                                 }}
+                                disabled={disableForm}
+                                required
+                            />
+                            <br />
+                            <Field
+                                className={classes.field}
+                                component={MetroSelect}
+                                name="metroKey"
                                 disabled={disableForm}
                                 required
                             />

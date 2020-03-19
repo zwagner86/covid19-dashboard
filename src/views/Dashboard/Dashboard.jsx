@@ -233,16 +233,22 @@ const Dashboard = props => {
                                     title: 'Reported Cases',
                                     field: 'reportedCasesRounded',
                                     type: 'numeric',
+                                    tooltip:
+                                        'Estimate of number of CDC reported cases.',
                                 },
                                 {
                                     title: 'Projected Cases',
                                     field: 'projectedCasesRounded',
                                     type: 'numeric',
+                                    tooltip:
+                                        'The true amount of cases.  Projected Cases = Reported Cases x Multiplier.',
                                 },
                                 {
                                     title: 'Projected Rate',
                                     field: 'projectedRatePercentage',
                                     type: 'numeric',
+                                    tooltip:
+                                        'The percentage of those infected.  Projected Rate = Projected Cases / Population.',
                                 },
                             ]}
                             data={projectionData}
@@ -284,6 +290,8 @@ const Dashboard = props => {
                                     title: 'Encounters Per Day',
                                     field: 'encountersPerDay',
                                     type: 'numeric',
+                                    tooltip:
+                                        'Expected amount of infected people met in a single day.',
                                 },
                                 {
                                     title: 'Risk of 1+ Encounters',
@@ -302,11 +310,15 @@ const Dashboard = props => {
                                                     : 'inherit',
                                         };
                                     },
+                                    tooltip:
+                                        'For date in row, chance of meeting at least one infected person this date.',
                                 },
                                 {
                                     title: 'Cumulative Miss',
                                     field: 'cumulativeMissPercentage',
                                     type: 'numeric',
+                                    tooltip:
+                                        'For date in row, the chance of not meeting an infected person up to this date.',
                                 },
                                 {
                                     title: 'Cumulative Risk',
@@ -325,6 +337,8 @@ const Dashboard = props => {
                                                     : 'inherit',
                                         };
                                     },
+                                    tooltip:
+                                        'For date in row, the chance of meeting at least one infected person by this date.',
                                 },
                             ]}
                             data={riskData}

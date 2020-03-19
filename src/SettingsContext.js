@@ -1,11 +1,13 @@
 import React from 'react';
 import moment from 'moment';
+import metros from './data/metros';
 
 const startDate = moment('2020-03-06');
 
 const initialSettings = {
     doublingTime: 3,
-    population: 9500000,
+    metroKey: metros[0].key,
+    population: metros[0].population,
     exposure: 100,
     startDate,
     numberOfDays: 30,
