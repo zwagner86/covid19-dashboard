@@ -52,6 +52,22 @@ const ProjectedCases = props => {
                 },
             ],
         },
+        tooltips: {
+            callbacks: {
+                label: (tooltipItem, data) => {
+                    let label =
+                        data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+
+                    label += numeral(tooltipItem.yLabel).format('0,0');
+
+                    return label;
+                },
+            },
+        },
         maintainAspectRatio: false,
     };
 

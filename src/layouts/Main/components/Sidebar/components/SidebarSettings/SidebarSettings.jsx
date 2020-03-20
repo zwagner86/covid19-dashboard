@@ -129,11 +129,10 @@ const SidebarSettings = ({disableForm}) => {
                         <Form>
                             <Field
                                 className={classes.field}
-                                component={TextField}
+                                component={TextFieldWithNumberFormat}
                                 name="doublingTime"
                                 label="Doubling Time"
-                                type="number"
-                                placeholder="3"
+                                placeholder="2.3"
                                 InputProps={{
                                     endAdornment: (
                                         <InputAdornment position="end">
@@ -149,8 +148,11 @@ const SidebarSettings = ({disableForm}) => {
                                     ),
                                 }}
                                 inputProps={{
+                                    step: '0.01',
                                     min: 1,
                                     max: 3,
+                                    decimalScale: 2,
+                                    fixedDecimalScale: true,
                                 }}
                                 disabled={disableForm}
                                 required

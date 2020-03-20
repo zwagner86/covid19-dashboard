@@ -356,6 +356,7 @@ const Dashboard = props => {
                             title="Risk 1-Plus Encounters"
                             type="1plus"
                             chartData={risk1PlusChartData}
+                            worryLevel={cutoffRiskPerDay}
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -363,6 +364,7 @@ const Dashboard = props => {
                             title="Cumulative Risk"
                             type="cumulative"
                             chartData={cumulativeRiskChartData}
+                            worryLevel={cutoffRiskCumulative}
                         />
                     </Grid>
                 </Grid>

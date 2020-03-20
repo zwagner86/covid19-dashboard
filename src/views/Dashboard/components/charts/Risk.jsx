@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {Line} from 'react-chartjs-2';
+import 'chartjs-plugin-annotation';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import numeral from 'numeral';
 import {makeStyles} from '@material-ui/styles';
 import {
+    colors,
     Card,
     CardHeader,
     CardContent,
@@ -25,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Risk = props => {
-    const {className, chartData, type, title, ...rest} = props;
+    const {className, chartData, type, title, worryLevel, ...rest} = props;
     const classes = useStyles();
     const [lineType, setLineType] = useState('linear');
 
@@ -68,6 +70,25 @@ const Risk = props => {
                     return label;
                 },
             },
+        },
+        annotation: {
+            annotations: [
+                {
+                    drawTime: 'beforeDatasetsDraw',
+                    id: 'hline',
+                    type: 'line',
+                    mode: 'horizontal',
+                    scaleID: 'y-axis-0',
+                    value: worryLevel / 100,
+                    borderColor: colors.common.black,
+                    borderWidth: 2,
+                    label: {
+                        backgroundColor: colors.grey[600],
+                        content: 'Risk Cutoff',
+                        enabled: true,
+                    },
+                },
+            ],
         },
         maintainAspectRatio: false,
     };

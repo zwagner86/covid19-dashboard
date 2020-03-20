@@ -5,7 +5,7 @@ import metros from './data/metros';
 const startDate = moment('2020-03-06');
 
 const initialSettings = {
-    doublingTime: 3,
+    doublingTime: 2.3,
     metroKey: metros[0].key,
     population: metros[0].population,
     exposure: 100,
