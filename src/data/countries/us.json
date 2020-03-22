@@ -1,0 +1,6325 @@
+{
+  "NY": [
+    {
+      "date": "2020-03-21",
+      "cases": 10356,
+      "hospitalizations": 0,
+      "deaths": 44,
+      "tests": 45437
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 7102,
+      "hospitalizations": 0,
+      "deaths": 35,
+      "tests": 32427
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 4152,
+      "hospitalizations": 0,
+      "deaths": 12,
+      "tests": 22284
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 2382,
+      "hospitalizations": 0,
+      "deaths": 12,
+      "tests": 14597
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 1700,
+      "hospitalizations": 0,
+      "deaths": 7,
+      "tests": 7206
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 950,
+      "hospitalizations": 0,
+      "deaths": 7,
+      "tests": 5493
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 729,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 5272
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 524,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3303
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 421,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3200
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 216,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 216
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 216,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 216
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 173,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 265
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 142,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 234
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 105,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 197
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 76,
+      "hospitalizations": 236,
+      "deaths": 0,
+      "tests": 404
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 33,
+      "hospitalizations": 236,
+      "deaths": 0,
+      "tests": 361
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 22,
+      "hospitalizations": 24,
+      "deaths": 0,
+      "tests": 122
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 6,
+      "hospitalizations": 24,
+      "deaths": 0,
+      "tests": 78
+    }
+  ],
+  "all": [
+    {
+      "date": "2020-03-21",
+      "cases": 33559,
+      "hospitalizations": 3477,
+      "deaths": 316,
+      "tests": 228134
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 17038,
+      "hospitalizations": 3336,
+      "deaths": 219,
+      "tests": 138521
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 11723,
+      "hospitalizations": 3025,
+      "deaths": 160,
+      "tests": 103867
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 7731,
+      "hospitalizations": 2538,
+      "deaths": 112,
+      "tests": 76495
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 5723,
+      "hospitalizations": 1687,
+      "deaths": 90,
+      "tests": 54957
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 4019,
+      "hospitalizations": 1691,
+      "deaths": 71,
+      "tests": 41714
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 3173,
+      "hospitalizations": 2242,
+      "deaths": 60,
+      "tests": 27963
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 2450,
+      "hospitalizations": 1236,
+      "deaths": 49,
+      "tests": 20789
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 1922,
+      "hospitalizations": 1130,
+      "deaths": 39,
+      "tests": 16665
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 1315,
+      "hospitalizations": 673,
+      "deaths": 36,
+      "tests": 9966
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 1053,
+      "hospitalizations": 563,
+      "deaths": 27,
+      "tests": 7617
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 778,
+      "hospitalizations": 469,
+      "deaths": 0,
+      "tests": 5054
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 584,
+      "hospitalizations": 313,
+      "deaths": 0,
+      "tests": 4264
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 417,
+      "hospitalizations": 347,
+      "deaths": 0,
+      "tests": 3099
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 341,
+      "hospitalizations": 602,
+      "deaths": 0,
+      "tests": 2752
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 223,
+      "hospitalizations": 458,
+      "deaths": 0,
+      "tests": 2252
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 176,
+      "hospitalizations": 197,
+      "deaths": 0,
+      "tests": 1326
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 118,
+      "hospitalizations": 103,
+      "deaths": 0,
+      "tests": 969
+    }
+  ],
+  "AK": [
+    {
+      "date": "2020-03-21",
+      "cases": 14,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 772
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 698
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 406
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 412
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 337
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 144
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 144
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 144
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 60
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 0,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 60
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 60
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 32
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 32
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 20
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 14
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 9
+    }
+  ],
+  "AL": [
+    {
+      "date": "2020-03-21",
+      "cases": 124,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 152
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 81,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 109
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 68,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 96
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 46,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 74
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 36,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 64
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 28,
+      "hospitalizations": 40,
+      "deaths": 0,
+      "tests": 96
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 12,
+      "hospitalizations": 46,
+      "deaths": 0,
+      "tests": 86
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 6,
+      "hospitalizations": 46,
+      "deaths": 0,
+      "tests": 74
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "AR": [
+    {
+      "date": "2020-03-21",
+      "cases": 118,
+      "hospitalizations": 154,
+      "deaths": 0,
+      "tests": 839
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 96,
+      "hospitalizations": 203,
+      "deaths": 0,
+      "tests": 650
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 46,
+      "hospitalizations": 113,
+      "deaths": 0,
+      "tests": 469
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 33,
+      "hospitalizations": 50,
+      "deaths": 0,
+      "tests": 319
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 22,
+      "hospitalizations": 41,
+      "deaths": 0,
+      "tests": 260
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 22,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 168
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 16,
+      "hospitalizations": 30,
+      "deaths": 0,
+      "tests": 149
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 12,
+      "hospitalizations": 26,
+      "deaths": 0,
+      "tests": 103
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 9,
+      "hospitalizations": 22,
+      "deaths": 0,
+      "tests": 61
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 6,
+      "hospitalizations": 20,
+      "deaths": 0,
+      "tests": 50
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 26
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 15
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 6
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 6
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 6
+    }
+  ],
+  "AS": [
+    {
+      "date": "2020-03-21",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "AZ": [
+    {
+      "date": "2020-03-21",
+      "cases": 104,
+      "hospitalizations": 122,
+      "deaths": 1,
+      "tests": 516
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 65,
+      "hospitalizations": 101,
+      "deaths": 0,
+      "tests": 377
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 44,
+      "hospitalizations": 130,
+      "deaths": 0,
+      "tests": 349
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 28,
+      "hospitalizations": 102,
+      "deaths": 0,
+      "tests": 278
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 20,
+      "hospitalizations": 66,
+      "deaths": 0,
+      "tests": 228
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 18,
+      "hospitalizations": 63,
+      "deaths": 0,
+      "tests": 206
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 12,
+      "hospitalizations": 50,
+      "deaths": 0,
+      "tests": 183
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 12,
+      "hospitalizations": 50,
+      "deaths": 0,
+      "tests": 183
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 9,
+      "hospitalizations": 40,
+      "deaths": 0,
+      "tests": 143
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 9,
+      "hospitalizations": 24,
+      "deaths": 0,
+      "tests": 115
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 9,
+      "hospitalizations": 32,
+      "deaths": 0,
+      "tests": 100
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 6,
+      "hospitalizations": 27,
+      "deaths": 0,
+      "tests": 84
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 5,
+      "hospitalizations": 7,
+      "deaths": 0,
+      "tests": 56
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 5,
+      "hospitalizations": 7,
+      "deaths": 0,
+      "tests": 56
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 5,
+      "hospitalizations": 7,
+      "deaths": 0,
+      "tests": 56
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 3,
+      "hospitalizations": 15,
+      "deaths": 0,
+      "tests": 51
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 2,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 36
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 2,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 34
+    }
+  ],
+  "CA": [
+    {
+      "date": "2020-03-21",
+      "cases": 1279,
+      "hospitalizations": 0,
+      "deaths": 24,
+      "tests": 12528
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 1063,
+      "hospitalizations": 0,
+      "deaths": 20,
+      "tests": 11487
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 924,
+      "hospitalizations": 0,
+      "deaths": 18,
+      "tests": 9711
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 611,
+      "hospitalizations": 0,
+      "deaths": 13,
+      "tests": 8592
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 483,
+      "hospitalizations": 0,
+      "deaths": 11,
+      "tests": 8407
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 335,
+      "hospitalizations": 0,
+      "deaths": 6,
+      "tests": 8316
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 293,
+      "hospitalizations": 0,
+      "deaths": 5,
+      "tests": 1209
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 252,
+      "hospitalizations": 0,
+      "deaths": 5,
+      "tests": 1168
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 202,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 1118
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 202,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 1118
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 157,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1073
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 133,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 823
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 114,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 804
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 88,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 550
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 69,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 531
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 60,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 522
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 53,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 515
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 53,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 515
+    }
+  ],
+  "CO": [
+    {
+      "date": "2020-03-21",
+      "cases": 363,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 3680
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 277,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 2952
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 216,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 2328
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 183,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 1800
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 160,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1216
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 131,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 758
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 131,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 758
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 101,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 711
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 72,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 596
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 45,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 343
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 28,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 279
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 12,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 155
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 9,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 142
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 112
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 8,
+      "hospitalizations": 69,
+      "deaths": 0,
+      "tests": 132
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 2,
+      "hospitalizations": 30,
+      "deaths": 0,
+      "tests": 78
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 21,
+      "deaths": 0,
+      "tests": 40
+    }
+  ],
+  "CT": [
+    {
+      "date": "2020-03-21",
+      "cases": 194,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 2300
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 194,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 798
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 96,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 700
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 68,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 193
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 41,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 166
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 26,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 151
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 20,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 145
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 11,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 136
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 105
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 95
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 74
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 56
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 47
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 8,
+      "deaths": 0,
+      "tests": 38
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "DC": [
+    {
+      "date": "2020-03-21",
+      "cases": 77,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 583
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 71,
+      "hospitalizations": 1,
+      "deaths": 1,
+      "tests": 573
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 39,
+      "hospitalizations": 11,
+      "deaths": 0,
+      "tests": 203
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 31,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 170
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 22,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 126
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 17,
+      "hospitalizations": 7,
+      "deaths": 0,
+      "tests": 120
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 16,
+      "hospitalizations": 20,
+      "deaths": 0,
+      "tests": 115
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 10,
+      "hospitalizations": 10,
+      "deaths": 0,
+      "tests": 69
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 30
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 30
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 4,
+      "hospitalizations": 15,
+      "deaths": 0,
+      "tests": 39
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 5,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 24
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 18
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 11
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 9
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 9
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 8
+    }
+  ],
+  "DE": [
+    {
+      "date": "2020-03-21",
+      "cases": 45,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 81
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 38,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 74
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 30,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 66
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 25,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 61
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 16,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 52
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 8,
+      "hospitalizations": 32,
+      "deaths": 0,
+      "tests": 76
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 6,
+      "hospitalizations": 32,
+      "deaths": 0,
+      "tests": 74
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 6,
+      "hospitalizations": 32,
+      "deaths": 0,
+      "tests": 74
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 4,
+      "hospitalizations": 10,
+      "deaths": 0,
+      "tests": 44
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 4,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 41
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 1,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 20
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 20
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 18
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    }
+  ],
+  "FL": [
+    {
+      "date": "2020-03-21",
+      "cases": 658,
+      "hospitalizations": 1002,
+      "deaths": 12,
+      "tests": 8239
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 520,
+      "hospitalizations": 1026,
+      "deaths": 10,
+      "tests": 3416
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 390,
+      "hospitalizations": 1019,
+      "deaths": 8,
+      "tests": 2942
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 314,
+      "hospitalizations": 954,
+      "deaths": 7,
+      "tests": 2493
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 186,
+      "hospitalizations": 872,
+      "deaths": 6,
+      "tests": 1998
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 141,
+      "hospitalizations": 514,
+      "deaths": 4,
+      "tests": 1339
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 116,
+      "hospitalizations": 454,
+      "deaths": 4,
+      "tests": 1248
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 77,
+      "hospitalizations": 221,
+      "deaths": 3,
+      "tests": 776
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 50,
+      "hospitalizations": 221,
+      "deaths": 2,
+      "tests": 749
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 32,
+      "hospitalizations": 147,
+      "deaths": 2,
+      "tests": 480
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 28,
+      "hospitalizations": 147,
+      "deaths": 2,
+      "tests": 476
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 19,
+      "hospitalizations": 155,
+      "deaths": 0,
+      "tests": 396
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 18,
+      "hospitalizations": 115,
+      "deaths": 0,
+      "tests": 273
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 17,
+      "hospitalizations": 108,
+      "deaths": 0,
+      "tests": 243
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 14,
+      "hospitalizations": 88,
+      "deaths": 0,
+      "tests": 202
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 9,
+      "hospitalizations": 51,
+      "deaths": 0,
+      "tests": 115
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 9,
+      "hospitalizations": 69,
+      "deaths": 0,
+      "tests": 109
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 2,
+      "hospitalizations": 16,
+      "deaths": 0,
+      "tests": 42
+    }
+  ],
+  "GA": [
+    {
+      "date": "2020-03-21",
+      "cases": 507,
+      "hospitalizations": 0,
+      "deaths": 14,
+      "tests": 3064
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 420,
+      "hospitalizations": 0,
+      "deaths": 13,
+      "tests": 2386
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 287,
+      "hospitalizations": 0,
+      "deaths": 10,
+      "tests": 1831
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 197,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1508
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 146,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 146
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 121,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 121
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 99,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 99
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 66,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 66
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 42,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 42
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 31,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 31
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 22,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 22
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 17,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 17
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 7
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 6
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    }
+  ],
+  "GU": [
+    {
+      "date": "2020-03-21",
+      "cases": 15,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 123
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 14,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 100
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 81
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 65
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 46
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 26
+    }
+  ],
+  "HI": [
+    {
+      "date": "2020-03-21",
+      "cases": 37,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 170
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 26,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 159
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 16,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 118
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 14,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 119
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 7
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "IA": [
+    {
+      "date": "2020-03-21",
+      "cases": 68,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1117
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 45,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 687
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 38,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 121
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 29,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 112
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 23,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 106
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 22,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 105
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 18,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 101
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 17,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 100
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 16,
+      "hospitalizations": 29,
+      "deaths": 0,
+      "tests": 128
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 14,
+      "hospitalizations": 24,
+      "deaths": 0,
+      "tests": 105
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 13,
+      "hospitalizations": 27,
+      "deaths": 0,
+      "tests": 86
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 8,
+      "hospitalizations": 11,
+      "deaths": 0,
+      "tests": 51
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 3,
+      "hospitalizations": 8,
+      "deaths": 0,
+      "tests": 37
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 17
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 17
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 17
+    }
+  ],
+  "ID": [
+    {
+      "date": "2020-03-21",
+      "cases": 31,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 911
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 23,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 613
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 11,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 468
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 9,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 468
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 353
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 270
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 176
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 176
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 131
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 93
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 67
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 41
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 41
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 27
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 27
+    }
+  ],
+  "IL": [
+    {
+      "date": "2020-03-21",
+      "cases": 759,
+      "hospitalizations": 0,
+      "deaths": 6,
+      "tests": 6247
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 590,
+      "hospitalizations": 0,
+      "deaths": 5,
+      "tests": 4286
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 426,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 3151
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 289,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 2052
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 160,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1500
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 93,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1025
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 64,
+      "hospitalizations": 195,
+      "deaths": 0,
+      "tests": 708
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 46,
+      "hospitalizations": 82,
+      "deaths": 0,
+      "tests": 444
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 32,
+      "hospitalizations": 92,
+      "deaths": 0,
+      "tests": 418
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 25,
+      "hospitalizations": 76,
+      "deaths": 0,
+      "tests": 367
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 19,
+      "hospitalizations": 63,
+      "deaths": 0,
+      "tests": 326
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 19,
+      "hospitalizations": 63,
+      "deaths": 0,
+      "tests": 326
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 7,
+      "hospitalizations": 44,
+      "deaths": 0,
+      "tests": 242
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 6,
+      "hospitalizations": 44,
+      "deaths": 0,
+      "tests": 241
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 6,
+      "hospitalizations": 44,
+      "deaths": 0,
+      "tests": 241
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 5,
+      "hospitalizations": 35,
+      "deaths": 0,
+      "tests": 220
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 5,
+      "hospitalizations": 27,
+      "deaths": 0,
+      "tests": 197
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 4,
+      "hospitalizations": 27,
+      "deaths": 0,
+      "tests": 155
+    }
+  ],
+  "IN": [
+    {
+      "date": "2020-03-21",
+      "cases": 126,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 833
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 79,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 554
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 56,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 380
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 39,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 193
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 30,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 159
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 24,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 139
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 19,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 121
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 15,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 89
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 73
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 64
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 43
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 36
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "KS": [
+    {
+      "date": "2020-03-21",
+      "cases": 55,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 472
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 44,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 461
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 34,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 451
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 16,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 433
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 15,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 397
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 11,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 177
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 143
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 100
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 99
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 45
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 42
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 1,
+      "hospitalizations": 21,
+      "deaths": 0,
+      "tests": 39
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 13
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 4
+    }
+  ],
+  "KY": [
+    {
+      "date": "2020-03-21",
+      "cases": 54,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 768
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 47,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 639
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 35,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 489
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 26,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 380
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 22,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 317
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 21,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 255
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 16,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 155
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 14,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 153
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 11,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 118
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 64
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 54
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 34
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 21
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 14
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 10
+    }
+  ],
+  "LA": [
+    {
+      "date": "2020-03-21",
+      "cases": 585,
+      "hospitalizations": 0,
+      "deaths": 16,
+      "tests": 2765
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 479,
+      "hospitalizations": 0,
+      "deaths": 12,
+      "tests": 1047
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 347,
+      "hospitalizations": 0,
+      "deaths": 8,
+      "tests": 805
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 240,
+      "hospitalizations": 0,
+      "deaths": 6,
+      "tests": 575
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 171,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 457
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 114,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 302
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 91,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 247
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 69,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 178
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 36,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 73
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 14,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 51
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 43
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 6
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "MA": [
+    {
+      "date": "2020-03-21",
+      "cases": 525,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 5277
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 413,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 4091
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 328,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3132
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 256,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2271
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 218,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1759
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 164,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 516
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 138,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 490
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 138,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 490
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 123,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 215
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 95,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 95
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 92,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 92
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 92,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 92
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 41,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 41
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 13,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 13
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 13,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 13
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 8
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    }
+  ],
+  "MD": [
+    {
+      "date": "2020-03-21",
+      "cases": 190,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 284
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 149,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 243
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 107,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 201
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 85,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 179
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 57,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 151
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 37,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 131
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 31,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 125
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 26,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 120
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 17,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 111
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 106
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 9,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 103
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 95
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 78
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 55
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 44
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 3,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 41
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 31
+    }
+  ],
+  "ME": [
+    {
+      "date": "2020-03-21",
+      "cases": 73,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2337
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 57,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2321
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 53,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2057
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 43,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1713
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 32,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1335
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 17,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 781
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 3,
+      "hospitalizations": 17,
+      "deaths": 0,
+      "tests": 111
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 3,
+      "hospitalizations": 17,
+      "deaths": 0,
+      "tests": 111
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 3,
+      "hospitalizations": 17,
+      "deaths": 0,
+      "tests": 111
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 1,
+      "hospitalizations": 20,
+      "deaths": 0,
+      "tests": 86
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 47
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 25
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "MI": [
+    {
+      "date": "2020-03-21",
+      "cases": 787,
+      "hospitalizations": 0,
+      "deaths": 5,
+      "tests": 2856
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 549,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 2618
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 336,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 2449
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 80,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 352
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 65,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 337
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 53,
+      "hospitalizations": 30,
+      "deaths": 0,
+      "tests": 355
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 33,
+      "hospitalizations": 26,
+      "deaths": 0,
+      "tests": 264
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 25,
+      "hospitalizations": 26,
+      "deaths": 0,
+      "tests": 256
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 16,
+      "hospitalizations": 26,
+      "deaths": 0,
+      "tests": 175
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 2,
+      "hospitalizations": 27,
+      "deaths": 0,
+      "tests": 120
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 2,
+      "hospitalizations": 18,
+      "deaths": 0,
+      "tests": 77
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 24,
+      "deaths": 0,
+      "tests": 63
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 11,
+      "deaths": 0,
+      "tests": 47
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 10,
+      "deaths": 0,
+      "tests": 36
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 27
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 8,
+      "deaths": 0,
+      "tests": 16
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 8
+    }
+  ],
+  "MN": [
+    {
+      "date": "2020-03-21",
+      "cases": 138,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 4090
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 115,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3856
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 89,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3038
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 77,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2762
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 60,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2336
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 54,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1893
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 35,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1422
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 21,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 868
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 14,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 555
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 9,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 316
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 222
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 135
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 82
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 49
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 49
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 36
+    }
+  ],
+  "MO": [
+    {
+      "date": "2020-03-21",
+      "cases": 73,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 442
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 47,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 416
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 24,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 332
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 13,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 266
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 215
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 170
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 127
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 94
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 73
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 65
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "MP": [
+    {
+      "date": "2020-03-21",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "MS": [
+    {
+      "date": "2020-03-21",
+      "cases": 140,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 835
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 80,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 775
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 50,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 602
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 34,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 513
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 21,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 389
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 289
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 94
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 90
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 45
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 42
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 20
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "MT": [
+    {
+      "date": "2020-03-21",
+      "cases": 20,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1166
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 16,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 947
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 773
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 509
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 311
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 205
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 7,
+      "hospitalizations": 57,
+      "deaths": 0,
+      "tests": 167
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 108
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 56
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 35
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 21
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 15
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 11
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 11
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 11
+    }
+  ],
+  "NC": [
+    {
+      "date": "2020-03-21",
+      "cases": 184,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5276
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 137,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3233
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 97,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2505
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 63,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1850
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 40,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 514
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 33,
+      "hospitalizations": 151,
+      "deaths": 0,
+      "tests": 480
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 32,
+      "hospitalizations": 151,
+      "deaths": 0,
+      "tests": 410
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 23,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 160
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 15,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 101
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 72
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 7
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 7
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "ND": [
+    {
+      "date": "2020-03-21",
+      "cases": 28,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1169
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 20,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 820
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 15,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 508
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 274
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 223
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 124
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 1,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 100
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 1,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 69
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 1,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 52
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 1,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 27
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 13
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 8
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ],
+  "NE": [
+    {
+      "date": "2020-03-21",
+      "cases": 38,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 394
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 32,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 272
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 27,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 267
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 24,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 230
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 21,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 227
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 18,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 188
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 17,
+      "hospitalizations": 33,
+      "deaths": 0,
+      "tests": 130
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 14,
+      "hospitalizations": 33,
+      "deaths": 0,
+      "tests": 127
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 13,
+      "hospitalizations": 33,
+      "deaths": 0,
+      "tests": 126
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 10,
+      "hospitalizations": 33,
+      "deaths": 0,
+      "tests": 123
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 5,
+      "hospitalizations": 16,
+      "deaths": 0,
+      "tests": 68
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 3,
+      "hospitalizations": 16,
+      "deaths": 0,
+      "tests": 66
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 3,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 48
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 23
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 23
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 22
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 22
+    }
+  ],
+  "NH": [
+    {
+      "date": "2020-03-21",
+      "cases": 55,
+      "hospitalizations": 942,
+      "deaths": 0,
+      "tests": 1970
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 44,
+      "hospitalizations": 631,
+      "deaths": 0,
+      "tests": 1420
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 39,
+      "hospitalizations": 231,
+      "deaths": 0,
+      "tests": 891
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 26,
+      "hospitalizations": 208,
+      "deaths": 0,
+      "tests": 747
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 17,
+      "hospitalizations": 195,
+      "deaths": 0,
+      "tests": 567
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 13,
+      "hospitalizations": 95,
+      "deaths": 0,
+      "tests": 379
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 13,
+      "hospitalizations": 95,
+      "deaths": 0,
+      "tests": 379
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 7,
+      "hospitalizations": 31,
+      "deaths": 0,
+      "tests": 250
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 6,
+      "hospitalizations": 21,
+      "deaths": 0,
+      "tests": 121
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 6,
+      "hospitalizations": 21,
+      "deaths": 0,
+      "tests": 121
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 4,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 47
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 4,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 47
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 4,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 47
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 4,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 47
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 2,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 25
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 2,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 25
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 2,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 22
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 2,
+      "hospitalizations": 7,
+      "deaths": 0,
+      "tests": 19
+    }
+  ],
+  "NJ": [
+    {
+      "date": "2020-03-21",
+      "cases": 1327,
+      "hospitalizations": 40,
+      "deaths": 16,
+      "tests": 1661
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 890,
+      "hospitalizations": 86,
+      "deaths": 11,
+      "tests": 1240
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 742,
+      "hospitalizations": 74,
+      "deaths": 9,
+      "tests": 1026
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 427,
+      "hospitalizations": 21,
+      "deaths": 5,
+      "tests": 638
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 267,
+      "hospitalizations": 55,
+      "deaths": 3,
+      "tests": 485
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 178,
+      "hospitalizations": 20,
+      "deaths": 2,
+      "tests": 218
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 98,
+      "hospitalizations": 34,
+      "deaths": 2,
+      "tests": 252
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 50,
+      "hospitalizations": 80,
+      "deaths": 1,
+      "tests": 227
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 50,
+      "hospitalizations": 80,
+      "deaths": 1,
+      "tests": 227
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 30,
+      "hospitalizations": 20,
+      "deaths": 1,
+      "tests": 124
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 24,
+      "hospitalizations": 20,
+      "deaths": 1,
+      "tests": 100
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 15,
+      "hospitalizations": 20,
+      "deaths": 0,
+      "tests": 79
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 11,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 60
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 37
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 4,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "NM": [
+    {
+      "date": "2020-03-21",
+      "cases": 57,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3828
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 43,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3814
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 35,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2797
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 28,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2354
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 23,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1272
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 17,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 583
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 13,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 495
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 247
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 200
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 160
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 90
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 69
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 57
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 48
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 48
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 16
+    }
+  ],
+  "NV": [
+    {
+      "date": "2020-03-21",
+      "cases": 124,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 2508
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 109,
+      "hospitalizations": -3,
+      "deaths": 1,
+      "tests": 2098
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 95,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1721
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 55,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 223
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 55,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 223
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 45,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 213
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 21,
+      "hospitalizations": 164,
+      "deaths": 0,
+      "tests": 353
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 20,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 188
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 11,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 179
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 175
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 173
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 14
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 15
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 15
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 15
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 15
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 15
+    }
+  ],
+  "OH": [
+    {
+      "date": "2020-03-21",
+      "cases": 247,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 387
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 169,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 309
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 119,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 259
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 88,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 228
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 67,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 207
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 50,
+      "hospitalizations": 361,
+      "deaths": 0,
+      "tests": 551
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 36,
+      "hospitalizations": 350,
+      "deaths": 0,
+      "tests": 525
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 13,
+      "hospitalizations": 159,
+      "deaths": 0,
+      "tests": 222
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 13,
+      "hospitalizations": 159,
+      "deaths": 0,
+      "tests": 222
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 5,
+      "hospitalizations": 52,
+      "deaths": 0,
+      "tests": 87
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 4,
+      "hospitalizations": 24,
+      "deaths": 0,
+      "tests": 49
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 3,
+      "hospitalizations": 15,
+      "deaths": 0,
+      "tests": 32
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 3,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 19
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 14
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 14
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 10
+    }
+  ],
+  "OK": [
+    {
+      "date": "2020-03-21",
+      "cases": 53,
+      "hospitalizations": 144,
+      "deaths": 1,
+      "tests": 757
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 49,
+      "hospitalizations": 374,
+      "deaths": 1,
+      "tests": 961
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 44,
+      "hospitalizations": 250,
+      "deaths": 1,
+      "tests": 760
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 29,
+      "hospitalizations": 110,
+      "deaths": 0,
+      "tests": 517
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 17,
+      "hospitalizations": 82,
+      "deaths": 0,
+      "tests": 346
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 10,
+      "hospitalizations": 29,
+      "deaths": 0,
+      "tests": 213
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 9,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 139
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 4,
+      "hospitalizations": 37,
+      "deaths": 0,
+      "tests": 77
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 3,
+      "hospitalizations": 37,
+      "deaths": 0,
+      "tests": 76
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 3,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 43
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 2,
+      "hospitalizations": 11,
+      "deaths": 0,
+      "tests": 28
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 2,
+      "hospitalizations": 11,
+      "deaths": 0,
+      "tests": 28
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 10,
+      "deaths": 0,
+      "tests": 19
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 11
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "OR": [
+    {
+      "date": "2020-03-21",
+      "cases": 114,
+      "hospitalizations": 433,
+      "deaths": 3,
+      "tests": 2550
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 114,
+      "hospitalizations": 433,
+      "deaths": 3,
+      "tests": 2550
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 88,
+      "hospitalizations": 437,
+      "deaths": 3,
+      "tests": 1854
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 75,
+      "hospitalizations": 361,
+      "deaths": 3,
+      "tests": 1554
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 47,
+      "hospitalizations": 184,
+      "deaths": 0,
+      "tests": 920
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 39,
+      "hospitalizations": 182,
+      "deaths": 0,
+      "tests": 800
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 36,
+      "hospitalizations": 225,
+      "deaths": 0,
+      "tests": 681
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 30,
+      "hospitalizations": 157,
+      "deaths": 0,
+      "tests": 524
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 30,
+      "hospitalizations": 157,
+      "deaths": 0,
+      "tests": 524
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 19,
+      "hospitalizations": 62,
+      "deaths": 0,
+      "tests": 367
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 19,
+      "hospitalizations": 62,
+      "deaths": 0,
+      "tests": 367
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 15,
+      "hospitalizations": 67,
+      "deaths": 0,
+      "tests": 295
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 14,
+      "hospitalizations": 52,
+      "deaths": 0,
+      "tests": 231
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 14,
+      "hospitalizations": 53,
+      "deaths": 0,
+      "tests": 167
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 7,
+      "hospitalizations": 40,
+      "deaths": 0,
+      "tests": 124
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 3,
+      "hospitalizations": 28,
+      "deaths": 0,
+      "tests": 95
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 3,
+      "hospitalizations": 13,
+      "deaths": 0,
+      "tests": 61
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 3,
+      "hospitalizations": 18,
+      "deaths": 0,
+      "tests": 50
+    }
+  ],
+  "PA": [
+    {
+      "date": "2020-03-21",
+      "cases": 371,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 4137
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 268,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 2842
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 185,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1793
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 133,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1320
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 96,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 975
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 76,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 746
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 63,
+      "hospitalizations": 183,
+      "deaths": 0,
+      "tests": 451
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 47,
+      "hospitalizations": 150,
+      "deaths": 0,
+      "tests": 402
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 33,
+      "hospitalizations": 130,
+      "deaths": 0,
+      "tests": 303
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 22,
+      "hospitalizations": 81,
+      "deaths": 0,
+      "tests": 219
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 15,
+      "hospitalizations": 54,
+      "deaths": 0,
+      "tests": 157
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 7
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 4
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    }
+  ],
+  "PR": [
+    {
+      "date": "2020-03-21",
+      "cases": 21,
+      "hospitalizations": 71,
+      "deaths": 0,
+      "tests": 235
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 14,
+      "hospitalizations": 52,
+      "deaths": 0,
+      "tests": 180
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 5,
+      "hospitalizations": 29,
+      "deaths": 0,
+      "tests": 90
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 5,
+      "hospitalizations": 21,
+      "deaths": 0,
+      "tests": 57
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 5,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 22
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 14
+    }
+  ],
+  "RI": [
+    {
+      "date": "2020-03-21",
+      "cases": 66,
+      "hospitalizations": 290,
+      "deaths": 0,
+      "tests": 1218
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 54,
+      "hospitalizations": 140,
+      "deaths": 0,
+      "tests": 848
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 33,
+      "hospitalizations": 334,
+      "deaths": 0,
+      "tests": 907
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 33,
+      "hospitalizations": 334,
+      "deaths": 0,
+      "tests": 907
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 21,
+      "hospitalizations": 149,
+      "deaths": 0,
+      "tests": 478
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 21,
+      "hospitalizations": 149,
+      "deaths": 0,
+      "tests": 478
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 20,
+      "hospitalizations": 57,
+      "deaths": 0,
+      "tests": 275
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 20,
+      "hospitalizations": 57,
+      "deaths": 0,
+      "tests": 275
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 14,
+      "hospitalizations": 29,
+      "deaths": 0,
+      "tests": 185
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 5,
+      "hospitalizations": 8,
+      "deaths": 0,
+      "tests": 107
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 5,
+      "hospitalizations": 24,
+      "deaths": 0,
+      "tests": 87
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 3,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 62
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 3,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 62
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 3,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 45
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    }
+  ],
+  "SC": [
+    {
+      "date": "2020-03-21",
+      "cases": 152,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1407
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 81,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 914
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 60,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 643
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 60,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 643
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 33,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 344
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 28,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 263
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 19,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 173
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 13,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 123
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 87
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 58
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 9,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 41
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 31
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 31
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 10
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    }
+  ],
+  "SD": [
+    {
+      "date": "2020-03-21",
+      "cases": 14,
+      "hospitalizations": 268,
+      "deaths": 1,
+      "tests": 973
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 14,
+      "hospitalizations": 270,
+      "deaths": 1,
+      "tests": 947
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 11,
+      "hospitalizations": 385,
+      "deaths": 1,
+      "tests": 947
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 11,
+      "hospitalizations": 350,
+      "deaths": 1,
+      "tests": 913
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 11,
+      "hospitalizations": 35,
+      "deaths": 0,
+      "tests": 597
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 504
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 9,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 342
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 9,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 194
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 9,
+      "hospitalizations": 11,
+      "deaths": 0,
+      "tests": 93
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 8,
+      "hospitalizations": 11,
+      "deaths": 0,
+      "tests": 46
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 5,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 20
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 11
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    }
+  ],
+  "TN": [
+    {
+      "date": "2020-03-21",
+      "cases": 371,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3643
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 228,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 791
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 154,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 503
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 98,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 447
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 73,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 403
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 52,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 322
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 39,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 196
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 32,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 162
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 26,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 142
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 18,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 97
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 57
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 7,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 7
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "TX": [
+    {
+      "date": "2020-03-21",
+      "cases": 304,
+      "hospitalizations": 0,
+      "deaths": 5,
+      "tests": 6522
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 194,
+      "hospitalizations": 0,
+      "deaths": 5,
+      "tests": 5277
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 143,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 2355
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 83,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 1907
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 64,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1268
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 57,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 57
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 56,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 56
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 51,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 51
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 39,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 39
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 23,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 23
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 21,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 21
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 13,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 13
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 12,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 12
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 8
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 8
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 5,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "UT": [
+    {
+      "date": "2020-03-21",
+      "cases": 136,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2560
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 112,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2147
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 78,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1526
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 63,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 194
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 51,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 182
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 39,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 170
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 28,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 159
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 137
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 137
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 135
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "VA": [
+    {
+      "date": "2020-03-21",
+      "cases": 152,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 2790
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 114,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 2325
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 94,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 1923
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 77,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1278
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 67,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 1028
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 51,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 489
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 45,
+      "hospitalizations": 0,
+      "deaths": 1,
+      "tests": 408
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 30,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 147
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 30,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 147
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 17,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 134
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 9,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 69
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 61
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 3,
+      "hospitalizations": 9,
+      "deaths": 0,
+      "tests": 50
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 2,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 44
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 7,
+      "deaths": 0,
+      "tests": 38
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 10,
+      "deaths": 0,
+      "tests": 31
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 21
+    }
+  ],
+  "VI": [
+    {
+      "date": "2020-03-21",
+      "cases": 6,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 6
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    }
+  ],
+  "VT": [
+    {
+      "date": "2020-03-21",
+      "cases": 29,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 808
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 29,
+      "hospitalizations": 0,
+      "deaths": 2,
+      "tests": 808
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 22,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 667
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 19,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 611
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 505
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 429
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 352
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 4,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 231
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 144
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 99
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 63
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 41
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 35
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 29
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 16
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 8
+    }
+  ],
+  "WA": [
+    {
+      "date": "2020-03-21",
+      "cases": 1524,
+      "hospitalizations": 0,
+      "deaths": 83,
+      "tests": 23243
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 1376,
+      "hospitalizations": 0,
+      "deaths": 74,
+      "tests": 20712
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 1187,
+      "hospitalizations": 0,
+      "deaths": 66,
+      "tests": 17105
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 1012,
+      "hospitalizations": 0,
+      "deaths": 52,
+      "tests": 14129
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 904,
+      "hospitalizations": 0,
+      "deaths": 48,
+      "tests": 12486
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 769,
+      "hospitalizations": 0,
+      "deaths": 42,
+      "tests": 10220
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 642,
+      "hospitalizations": 0,
+      "deaths": 40,
+      "tests": 7764
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 568,
+      "hospitalizations": 0,
+      "deaths": 37,
+      "tests": 6569
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 457,
+      "hospitalizations": 0,
+      "deaths": 31,
+      "tests": 4807
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 337,
+      "hospitalizations": 0,
+      "deaths": 29,
+      "tests": 3403
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 267,
+      "hospitalizations": 0,
+      "deaths": 24,
+      "tests": 2466
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 162,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1272
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 136,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1246
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 102,
+      "hospitalizations": 60,
+      "deaths": 0,
+      "tests": 802
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 102,
+      "hospitalizations": 66,
+      "deaths": 0,
+      "tests": 538
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 79,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 449
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 70,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 70
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 39,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 39
+    }
+  ],
+  "WI": [
+    {
+      "date": "2020-03-21",
+      "cases": 281,
+      "hospitalizations": 0,
+      "deaths": 4,
+      "tests": 4967
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 206,
+      "hospitalizations": 0,
+      "deaths": 3,
+      "tests": 3661
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 155,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2347
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 106,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1683
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 72,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1110
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 47,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 551
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 33,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 346
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 19,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 188
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 19,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 188
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 8,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 92
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 46
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 38
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 37
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 1,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 44
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 1,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 44
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 1,
+      "hospitalizations": 12,
+      "deaths": 0,
+      "tests": 44
+    },
+    {
+      "date": "2020-03-05",
+      "cases": 1,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 26
+    },
+    {
+      "date": "2020-03-04",
+      "cases": 1,
+      "hospitalizations": 6,
+      "deaths": 0,
+      "tests": 26
+    }
+  ],
+  "WV": [
+    {
+      "date": "2020-03-21",
+      "cases": 11,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 343
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 7,
+      "hospitalizations": 13,
+      "deaths": 0,
+      "tests": 239
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 2,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 148
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 1,
+      "hospitalizations": 14,
+      "deaths": 0,
+      "tests": 137
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 0,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 84
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 0,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 84
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 0,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 39
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 0,
+      "hospitalizations": 5,
+      "deaths": 0,
+      "tests": 31
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 0,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 21
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 0,
+      "hospitalizations": 1,
+      "deaths": 0,
+      "tests": 8
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 2,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 3,
+      "deaths": 0,
+      "tests": 5
+    },
+    {
+      "date": "2020-03-06",
+      "cases": 0,
+      "hospitalizations": 4,
+      "deaths": 0,
+      "tests": 5
+    }
+  ],
+  "WY": [
+    {
+      "date": "2020-03-21",
+      "cases": 23,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 461
+    },
+    {
+      "date": "2020-03-20",
+      "cases": 19,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 350
+    },
+    {
+      "date": "2020-03-19",
+      "cases": 18,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 289
+    },
+    {
+      "date": "2020-03-18",
+      "cases": 15,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 193
+    },
+    {
+      "date": "2020-03-17",
+      "cases": 10,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 105
+    },
+    {
+      "date": "2020-03-16",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3
+    },
+    {
+      "date": "2020-03-15",
+      "cases": 3,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 3
+    },
+    {
+      "date": "2020-03-14",
+      "cases": 2,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 2
+    },
+    {
+      "date": "2020-03-13",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-12",
+      "cases": 1,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 1
+    },
+    {
+      "date": "2020-03-11",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-10",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-09",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-08",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    },
+    {
+      "date": "2020-03-07",
+      "cases": 0,
+      "hospitalizations": 0,
+      "deaths": 0,
+      "tests": 0
+    }
+  ]
+}
