@@ -53,6 +53,11 @@ const SidebarSettings = ({disableForm}) => {
                         multiplier,
                         cutoffRiskPerDay,
                         cutoffRiskCumulative,
+                        hospitalizationRate,
+                        fatalityRate,
+                        hospitalizationDelayInDays,
+                        hospitalizationStayInDays,
+                        hospitalBeds,
                     } = values;
                     const errors = {};
 
@@ -103,17 +108,66 @@ const SidebarSettings = ({disableForm}) => {
                     // cutoffRiskPerDay errors
                     if (isNil(cutoffRiskPerDay)) {
                         errors.cutoffRiskPerDay = 'This is a required field.';
-                    } else if (cutoffRiskPerDay < 0) {
-                        errors.cutoffRiskPerDay = 'Value must be 0 or greater.';
+                    } else if (cutoffRiskPerDay < 0 || cutoffRiskPerDay > 100) {
+                        errors.cutoffRiskPerDay =
+                            'Value must be between 0 and 100.';
                     }
 
                     // cutoffRiskPerDay errors
                     if (isNil(cutoffRiskCumulative)) {
                         errors.cutoffRiskCumulative =
                             'This is a required field.';
-                    } else if (cutoffRiskCumulative < 0) {
+                    } else if (
+                        cutoffRiskCumulative < 0 ||
+                        cutoffRiskCumulative > 100
+                    ) {
                         errors.cutoffRiskCumulative =
+                            'Value must be between 0 and 100.';
+                    }
+
+                    // hospitalizationRate errors
+                    if (isNil(hospitalizationRate)) {
+                        errors.hospitalizationRate =
+                            'This is a required field.';
+                    } else if (
+                        hospitalizationRate < 0 ||
+                        hospitalizationRate > 100
+                    ) {
+                        errors.hospitalizationRate =
+                            'Value must be between 0 and 100.';
+                    }
+
+                    // fatalityRate errors
+                    if (isNil(fatalityRate)) {
+                        errors.fatalityRate = 'This is a required field.';
+                    } else if (fatalityRate < 0 || fatalityRate > 100) {
+                        errors.fatalityRate =
+                            'Value must be between 0 and 100.';
+                    }
+
+                    // hospitalizationDelayInDays errors
+                    if (isNil(hospitalizationDelayInDays)) {
+                        errors.hospitalizationDelayInDays =
+                            'This is a required field.';
+                    } else if (hospitalizationDelayInDays < 0) {
+                        errors.hospitalizationDelayInDays =
                             'Value must be 0 or greater.';
+                    }
+
+                    // hospitalizationStayInDays errors
+                    if (isNil(hospitalizationStayInDays)) {
+                        errors.hospitalizationStayInDays =
+                            'This is a required field.';
+                    } else if (hospitalizationStayInDays < 0) {
+                        errors.hospitalizationStayInDays =
+                            'Value must be 0 or greater.';
+                    }
+
+                    // hospitalBeds errors
+                    if (isNil(hospitalBeds)) {
+                        errors.hospitalBeds = 'This is a required field.';
+                    } else if (hospitalBeds < 0) {
+                        errors.hospitalBeds = 'Value must be 0 or greater.';
                     }
 
                     return errors;
@@ -388,6 +442,152 @@ const SidebarSettings = ({disableForm}) => {
                                     decimalScale: 2,
                                     fixedDecimalScale: true,
                                     suffix: '%',
+                                }}
+                                disabled={disableForm}
+                                required
+                            />
+                            <br />
+                            <Field
+                                className={classes.field}
+                                component={TextFieldWithNumberFormat}
+                                name="hospitalizationRate"
+                                label="Hospitalization Rate"
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <Tooltip
+                                                title="The percentage of cases requiring hospitalization."
+                                                arrow
+                                            >
+                                                <HelpOutlineIcon
+                                                    className={classes.helpIcon}
+                                                />
+                                            </Tooltip>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                inputProps={{
+                                    step: '0.01',
+                                    min: 0,
+                                    max: 100,
+                                    decimalScale: 2,
+                                    fixedDecimalScale: true,
+                                    suffix: '%',
+                                }}
+                                disabled={disableForm}
+                                required
+                            />
+                            <br />
+                            <Field
+                                className={classes.field}
+                                component={TextFieldWithNumberFormat}
+                                name="fatalityRate"
+                                label="Fatality Rate"
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <Tooltip
+                                                title="The percentage of cases resulting in death."
+                                                arrow
+                                            >
+                                                <HelpOutlineIcon
+                                                    className={classes.helpIcon}
+                                                />
+                                            </Tooltip>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                inputProps={{
+                                    step: '0.01',
+                                    min: 0,
+                                    max: 100,
+                                    decimalScale: 2,
+                                    fixedDecimalScale: true,
+                                    suffix: '%',
+                                }}
+                                disabled={disableForm}
+                                required
+                            />
+                            <br />
+                            <Field
+                                className={classes.field}
+                                component={TextField}
+                                name="hospitalizationDelayInDays"
+                                label="Hospitalization Delay (in days)"
+                                type="number"
+                                placeholder="9"
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <Tooltip
+                                                title="Number of days from onset of symptoms to hospitalization."
+                                                arrow
+                                            >
+                                                <HelpOutlineIcon
+                                                    className={classes.helpIcon}
+                                                />
+                                            </Tooltip>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                inputProps={{
+                                    min: 0,
+                                }}
+                                disabled={disableForm}
+                                required
+                            />
+                            <br />
+                            <Field
+                                className={classes.field}
+                                component={TextField}
+                                name="hospitalizationStayInDays"
+                                label="Hospital Stay (in days)"
+                                type="number"
+                                placeholder="10"
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <Tooltip
+                                                title="Number of days for a hospital stay."
+                                                arrow
+                                            >
+                                                <HelpOutlineIcon
+                                                    className={classes.helpIcon}
+                                                />
+                                            </Tooltip>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                inputProps={{
+                                    min: 0,
+                                }}
+                                disabled={disableForm}
+                                required
+                            />
+                            <br />
+                            <Field
+                                className={classes.field}
+                                component={TextFieldWithNumberFormat}
+                                name="hospitalBeds"
+                                label="Hospital Beds"
+                                placeholder="5000"
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <Tooltip
+                                                title="Number of hospital beds in metro area."
+                                                arrow
+                                            >
+                                                <HelpOutlineIcon
+                                                    className={classes.helpIcon}
+                                                />
+                                            </Tooltip>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                inputProps={{
+                                    min: 0,
+                                    thousandSeparator: true,
                                 }}
                                 disabled={disableForm}
                                 required

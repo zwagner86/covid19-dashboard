@@ -1,13 +1,14 @@
 import range from 'lodash/range';
 import React, {useContext, useState} from 'react';
 import moment from 'moment';
-import {colors, Grid, Paper, Tabs, Tab, Typography} from '@material-ui/core';
+import {colors, Grid, Paper, Tabs, Tab} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
 import {MaterialTable} from '../../components';
 import SettingsContext from '../../SettingsContext';
 import TabPanel from './components/TabPanel';
 import ProjectedCases from './components/charts/ProjectedCases';
 import Risk from './components/charts/Risk';
+import HospitalBeds from './components/charts/HospitalBeds';
 
 const a11yProps = index => {
     return {
@@ -34,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
     tabBar: {
         flexGrow: 1,
-        maxWidth: 400,
+        maxWidth: 600,
         margin: '0 auto',
     },
 }));
@@ -52,6 +53,11 @@ const Dashboard = props => {
             multiplier,
             cutoffRiskPerDay,
             cutoffRiskCumulative,
+            hospitalizationRate,
+            // fatalityRate,
+            hospitalizationDelayInDays,
+            hospitalizationStayInDays,
+            hospitalBeds,
         },
     } = useContext(SettingsContext);
     const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -60,6 +66,7 @@ const Dashboard = props => {
     };
     const projectionData = [];
     const riskData = [];
+    const hospitalizationData = [];
     const projectionsChartData = {
         labels: [],
         datasets: [
@@ -75,7 +82,7 @@ const Dashboard = props => {
                 pointHoverBackgroundColor: colors.blue[600],
                 pointHoverBorderColor: colors.grey[50],
                 pointHoverBorderWidth: 2,
-                pointRadius: 4,
+                pointRadius: 3,
                 pointHitRadius: 10,
                 data: [],
             },
@@ -96,7 +103,7 @@ const Dashboard = props => {
                 pointHoverBackgroundColor: colors.blue[600],
                 pointHoverBorderColor: colors.grey[50],
                 pointHoverBorderWidth: 2,
-                pointRadius: 4,
+                pointRadius: 3,
                 pointHitRadius: 10,
                 data: [],
             },
@@ -117,7 +124,28 @@ const Dashboard = props => {
                 pointHoverBackgroundColor: colors.orange[800],
                 pointHoverBorderColor: colors.grey[50],
                 pointHoverBorderWidth: 2,
-                pointRadius: 4,
+                pointRadius: 3,
+                pointHitRadius: 10,
+                data: [],
+            },
+        ],
+    };
+    const hospitalBedsChartData = {
+        labels: [],
+        datasets: [
+            {
+                label: 'Occupied Hospital Beds',
+                fill: true,
+                lineTension: 0.1,
+                borderColor: colors.orange[800],
+                pointBorderColor: colors.orange[800],
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: colors.orange[800],
+                pointHoverBorderColor: colors.grey[50],
+                pointHoverBorderWidth: 2,
+                pointRadius: 3,
                 pointHitRadius: 10,
                 data: [],
             },
@@ -154,6 +182,7 @@ const Dashboard = props => {
         projectionsChartData.labels.push(date);
         projectionsChartData.datasets[0].data.push(projectedCasesRounded);
 
+        // risk calculations
         const encountersPerDay = (projectedRate * exposure).toFixed(3);
         const risk1PlusEncounters = 1 - Math.pow(1 - projectedRate, exposure);
         const risk1PlusEncountersAsPercent = risk1PlusEncounters * 100;
@@ -193,6 +222,37 @@ const Dashboard = props => {
         risk1PlusChartData.datasets[0].data.push(risk1PlusEncounters);
         cumulativeRiskChartData.labels.push(date);
         cumulativeRiskChartData.datasets[0].data.push(cumulativeRisk);
+
+        // hospital calculations
+        const hospitalizationRateDecimal = hospitalizationRate / 100;
+        const enteredHospital =
+            index < hospitalizationDelayInDays
+                ? 0
+                : Math.round(
+                      hospitalizationRateDecimal *
+                          projectionData[index - hospitalizationDelayInDays]
+                              .projectedCasesRounded
+                  );
+        const leftHospital =
+            index < hospitalizationStayInDays
+                ? 0
+                : Math.round(
+                      hospitalizationData[index - hospitalizationStayInDays]
+                          .enteredHospital
+                  );
+        const netBeds = enteredHospital - leftHospital;
+        const hospital = {
+            date,
+            dateWithDay,
+            dayOfWeek,
+            enteredHospital,
+            leftHospital,
+            netBeds,
+        };
+
+        hospitalizationData.push(hospital);
+        hospitalBedsChartData.labels.push(date);
+        hospitalBedsChartData.datasets[0].data.push(netBeds);
     }
 
     return (
@@ -210,15 +270,6 @@ const Dashboard = props => {
                 </Tabs>
             </Paper>
             <TabPanel value={activeTabIndex} index={0}>
-                <Typography
-                    className={classes.cardsAtRiskTypography}
-                    component="h3"
-                    variant="h3"
-                    color="textPrimary"
-                    gutterBottom
-                >
-                    Projections
-                </Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={12}>
                         <MaterialTable
@@ -253,7 +304,6 @@ const Dashboard = props => {
                             ]}
                             data={projectionData}
                             options={{
-                                showTitle: false,
                                 sorting: false,
                                 search: false,
                                 draggable: false,
@@ -262,20 +312,58 @@ const Dashboard = props => {
                         />
                     </Grid>
                     <Grid item xs={12}>
+                        <MaterialTable
+                            title="Hospitalizations"
+                            columns={[
+                                {
+                                    title: 'Date',
+                                    field: 'dateWithDay',
+                                    type: 'date',
+                                },
+                                {
+                                    title: 'Entered Hospital',
+                                    field: 'enteredHospital',
+                                    type: 'numeric',
+                                    tooltip:
+                                        'Estimated number of hospitalized patients.',
+                                },
+                                {
+                                    title: 'Left Hospital',
+                                    field: 'leftHospital',
+                                    type: 'numeric',
+                                    tooltip:
+                                        'Estimated number of patients who left hospital.',
+                                },
+                                {
+                                    title: 'Occupied Beds',
+                                    field: 'netBeds',
+                                    type: 'numeric',
+                                    tooltip:
+                                        'The number of occupied hospital beds.',
+                                },
+                            ]}
+                            data={hospitalizationData}
+                            options={{
+                                sorting: false,
+                                search: false,
+                                draggable: false,
+                                exportButton: true,
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
                         <ProjectedCases chartData={projectionsChartData} />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <HospitalBeds
+                            title="Occupied Hospital Beds"
+                            chartData={hospitalBedsChartData}
+                            hospitalBedCapacity={hospitalBeds}
+                        />
                     </Grid>
                 </Grid>
             </TabPanel>
             <TabPanel value={activeTabIndex} index={1}>
-                <Typography
-                    className={classes.cardsAtRiskTypography}
-                    component="h3"
-                    variant="h3"
-                    color="textPrimary"
-                    gutterBottom
-                >
-                    Risk
-                </Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={12}>
                         <MaterialTable
@@ -343,7 +431,6 @@ const Dashboard = props => {
                             ]}
                             data={riskData}
                             options={{
-                                showTitle: false,
                                 sorting: false,
                                 search: false,
                                 draggable: false,

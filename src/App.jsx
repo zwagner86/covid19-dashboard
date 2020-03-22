@@ -26,7 +26,7 @@ const metro = find(metros, {key: metroName}) || metros[0];
 const startDate = moment('2020-03-06');
 
 const initialSettings = {
-    doublingTime: 3,
+    doublingTime: 2.3,
     metroKey: metro.key,
     population: metro.population,
     exposure: 100,
@@ -36,6 +36,11 @@ const initialSettings = {
     multiplier: 5,
     cutoffRiskPerDay: 5.0,
     cutoffRiskCumulative: 10.0,
+    hospitalizationRate: 10.0,
+    fatalityRate: 2.0,
+    hospitalizationDelayInDays: 9,
+    hospitalizationStayInDays: 10,
+    hospitalBeds: 33000,
 };
 
 const App = props => {

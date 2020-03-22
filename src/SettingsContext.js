@@ -15,6 +15,11 @@ const initialSettings = {
     multiplier: 5,
     cutoffRiskPerDay: 5.0,
     cutoffRiskCumulative: 10.0,
+    hospitalizationRate: 10.0,
+    fatalityRate: 2.0,
+    hospitalizationDelayInDays: 9,
+    hospitalizationStayInDays: 10,
+    hospitalBeds: 33000,
 };
 
 const SettingsContext = React.createContext({
