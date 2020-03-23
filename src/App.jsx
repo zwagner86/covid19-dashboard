@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import moment from 'moment';
 import queryString from 'query-string';
 import {Chart} from 'react-chartjs-2';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import {ThemeProvider} from '@material-ui/styles';
 
 import {chartjs} from './helpers';
@@ -118,6 +119,7 @@ const App = props => {
 
     return (
         <ThemeProvider theme={theme}>
+            <CssBaseline />
             <SettingsProvider value={{settings, setSettings}}>
                 <MainLayout disableForm={disableForm}>
                     <Dashboard />
