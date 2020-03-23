@@ -1,7 +1,7 @@
 import find from 'lodash/find';
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import metros, {otherMetro} from '../../../../../../data/metros';
+import states from '../../../../../../data/regions/usa/states';
 // import {makeStyles} from '@material-ui/styles';
 import {MenuItem} from '@material-ui/core';
 import {TextField} from 'formik-material-ui';
@@ -19,9 +19,9 @@ const MetroSelect = ({field, onSelectChange, ...props}) => {
 
         if (selectedKey !== value) {
             if (selectedKey === 'other') {
-                setFieldValue('population', otherMetro.population); // eslint-disable-line
+                setFieldValue('population', 1); // eslint-disable-line
             } else {
-                const metro = find(metros, {key: selectedKey});
+                const metro = find(states, {key: selectedKey});
 
                 setFieldValue('population', metro ? metro.population : 1);
             }
@@ -43,14 +43,14 @@ const MetroSelect = ({field, onSelectChange, ...props}) => {
                 label="City/Country"
                 {...selectProps}
             >
-                {metros.map(metroObj => {
+                {states.map(stateObj => {
                     return (
-                        <MenuItem key={metroObj.key} value={metroObj.key}>
-                            {metroObj.name}
+                        <MenuItem key={stateObj.key} value={stateObj.key}>
+                            {stateObj.name}
                         </MenuItem>
                     );
                 })}
-                <MenuItem value={otherMetro.key}>{otherMetro.name}</MenuItem>
+                <MenuItem value="other">Other</MenuItem>
             </TextField>
         </Fragment>
     );

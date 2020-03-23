@@ -1,5 +1,5 @@
 import range from 'lodash/range';
-import React, {useContext, useState} from 'react';
+import React, {Fragment, useContext, useState} from 'react';
 import moment from 'moment';
 import {colors, Grid, Paper, Tabs, Tab} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
@@ -44,6 +44,10 @@ const Dashboard = props => {
     const classes = useStyles();
     const {
         settings: {
+            onlyCase,
+            onlyRisk,
+            onlyCharts,
+            onlyTables,
             doublingTime,
             population,
             exposure,
@@ -64,6 +68,11 @@ const Dashboard = props => {
     const handleChange = (event, newIndex) => {
         setActiveTabIndex(newIndex);
     };
+    // display conditions
+    const displayCasesTab = onlyCase || !onlyRisk;
+    const displayRiskTab = onlyRisk || !onlyCase;
+    const displayCharts = onlyCharts || !onlyTables;
+    const displayTables = onlyTables || !onlyCharts;
     const projectionData = [];
     const riskData = [];
     const hospitalizationData = [];
@@ -265,197 +274,219 @@ const Dashboard = props => {
                     onChange={handleChange}
                     centered
                 >
-                    <Tab label="Projections" {...a11yProps(0)} />
-                    <Tab label="Risk" {...a11yProps(1)} />
+                    {displayCasesTab && <Tab label="Cases" {...a11yProps(0)} />}
+                    {displayRiskTab && <Tab label="Risk" {...a11yProps(1)} />}
                 </Tabs>
             </Paper>
-            <TabPanel value={activeTabIndex} index={0}>
-                <Grid container spacing={4}>
-                    <Grid item xs={12}>
-                        <MaterialTable
-                            title="Projections"
-                            columns={[
-                                {
-                                    title: 'Date',
-                                    field: 'dateWithDay',
-                                    type: 'date',
-                                },
-                                {
-                                    title: 'Reported Cases',
-                                    field: 'reportedCasesRounded',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'Estimate of number of CDC reported cases.',
-                                },
-                                {
-                                    title: 'Projected Cases',
-                                    field: 'projectedCasesRounded',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'The true amount of cases.  Projected Cases = Reported Cases x Multiplier.',
-                                },
-                                {
-                                    title: 'Projected Rate',
-                                    field: 'projectedRatePercentage',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'The percentage of those infected.  Projected Rate = Projected Cases / Population.',
-                                },
-                            ]}
-                            data={projectionData}
-                            options={{
-                                sorting: false,
-                                search: false,
-                                draggable: false,
-                                exportButton: true,
-                            }}
-                        />
+            {displayCasesTab && (
+                <TabPanel value={activeTabIndex} index={0}>
+                    <Grid container spacing={4}>
+                        {displayTables && (
+                            <Fragment>
+                                <Grid item xs={12}>
+                                    <MaterialTable
+                                        title="Cases"
+                                        columns={[
+                                            {
+                                                title: 'Date',
+                                                field: 'dateWithDay',
+                                                type: 'date',
+                                            },
+                                            {
+                                                title: 'Reported Cases',
+                                                field: 'reportedCasesRounded',
+                                                type: 'numeric',
+                                                tooltip:
+                                                    'Estimate of number of CDC reported cases.',
+                                            },
+                                            {
+                                                title: 'Projected Cases',
+                                                field: 'projectedCasesRounded',
+                                                type: 'numeric',
+                                                tooltip:
+                                                    'The true amount of cases.  Projected Cases = Reported Cases x Multiplier.',
+                                            },
+                                            {
+                                                title: 'Projected Rate',
+                                                field:
+                                                    'projectedRatePercentage',
+                                                type: 'numeric',
+                                                tooltip:
+                                                    'The percentage of those infected.  Projected Rate = Projected Cases / Population.',
+                                            },
+                                        ]}
+                                        data={projectionData}
+                                        options={{
+                                            sorting: false,
+                                            search: false,
+                                            draggable: false,
+                                            exportButton: true,
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <MaterialTable
+                                        title="Hospitalizations"
+                                        columns={[
+                                            {
+                                                title: 'Date',
+                                                field: 'dateWithDay',
+                                                type: 'date',
+                                            },
+                                            {
+                                                title: 'Entered Hospital',
+                                                field: 'enteredHospital',
+                                                type: 'numeric',
+                                                tooltip:
+                                                    'Estimated number of hospitalized patients.',
+                                            },
+                                            {
+                                                title: 'Left Hospital',
+                                                field: 'leftHospital',
+                                                type: 'numeric',
+                                                tooltip:
+                                                    'Estimated number of patients who left hospital.',
+                                            },
+                                            {
+                                                title: 'Occupied Beds',
+                                                field: 'netBeds',
+                                                type: 'numeric',
+                                                tooltip:
+                                                    'The number of occupied hospital beds.',
+                                            },
+                                        ]}
+                                        data={hospitalizationData}
+                                        options={{
+                                            sorting: false,
+                                            search: false,
+                                            draggable: false,
+                                            exportButton: true,
+                                        }}
+                                    />
+                                </Grid>
+                            </Fragment>
+                        )}
+                        {displayCharts && (
+                            <Fragment>
+                                <Grid item xs={12} md={6}>
+                                    <ProjectedCases
+                                        chartData={projectionsChartData}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <HospitalBeds
+                                        title="Occupied Hospital Beds"
+                                        chartData={hospitalBedsChartData}
+                                        hospitalBedCapacity={hospitalBeds}
+                                    />
+                                </Grid>
+                            </Fragment>
+                        )}
                     </Grid>
-                    <Grid item xs={12}>
-                        <MaterialTable
-                            title="Hospitalizations"
-                            columns={[
-                                {
-                                    title: 'Date',
-                                    field: 'dateWithDay',
-                                    type: 'date',
-                                },
-                                {
-                                    title: 'Entered Hospital',
-                                    field: 'enteredHospital',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'Estimated number of hospitalized patients.',
-                                },
-                                {
-                                    title: 'Left Hospital',
-                                    field: 'leftHospital',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'Estimated number of patients who left hospital.',
-                                },
-                                {
-                                    title: 'Occupied Beds',
-                                    field: 'netBeds',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'The number of occupied hospital beds.',
-                                },
-                            ]}
-                            data={hospitalizationData}
-                            options={{
-                                sorting: false,
-                                search: false,
-                                draggable: false,
-                                exportButton: true,
-                            }}
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <ProjectedCases chartData={projectionsChartData} />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <HospitalBeds
-                            title="Occupied Hospital Beds"
-                            chartData={hospitalBedsChartData}
-                            hospitalBedCapacity={hospitalBeds}
-                        />
-                    </Grid>
-                </Grid>
-            </TabPanel>
-            <TabPanel value={activeTabIndex} index={1}>
-                <Grid container spacing={4}>
-                    <Grid item xs={12}>
-                        <MaterialTable
-                            title="Risk"
-                            columns={[
-                                {
-                                    title: 'Date',
-                                    field: 'dateWithDay',
-                                    type: 'date',
-                                },
-                                {
-                                    title: 'Encounters Per Day',
-                                    field: 'encountersPerDay',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'Expected amount of infected people met in a single day.',
-                                },
-                                {
-                                    title: 'Risk of 1+ Encounters',
-                                    field: 'risk1PlusEncountersPercentage',
-                                    type: 'numeric',
-                                    cellStyle: (value, rowData) => {
-                                        const {
-                                            risk1PlusEncountersAsPercent,
-                                        } = rowData;
+                </TabPanel>
+            )}
+            {displayRiskTab && (
+                <TabPanel value={activeTabIndex} index={1}>
+                    <Grid container spacing={4}>
+                        {displayTables && (
+                            <Grid item xs={12}>
+                                <MaterialTable
+                                    title="Risk"
+                                    columns={[
+                                        {
+                                            title: 'Date',
+                                            field: 'dateWithDay',
+                                            type: 'date',
+                                        },
+                                        {
+                                            title: 'Encounters Per Day',
+                                            field: 'encountersPerDay',
+                                            type: 'numeric',
+                                            tooltip:
+                                                'Expected amount of infected people met in a single day.',
+                                        },
+                                        {
+                                            title: 'Risk of 1+ Encounters',
+                                            field:
+                                                'risk1PlusEncountersPercentage',
+                                            type: 'numeric',
+                                            cellStyle: (value, rowData) => {
+                                                const {
+                                                    risk1PlusEncountersAsPercent,
+                                                } = rowData;
 
-                                        return {
-                                            color:
-                                                risk1PlusEncountersAsPercent >
-                                                cutoffRiskPerDay
-                                                    ? colors.red[700]
-                                                    : 'inherit',
-                                        };
-                                    },
-                                    tooltip:
-                                        'For date in row, chance of meeting at least one infected person this date.',
-                                },
-                                {
-                                    title: 'Cumulative Miss',
-                                    field: 'cumulativeMissPercentage',
-                                    type: 'numeric',
-                                    tooltip:
-                                        'For date in row, the chance of not meeting an infected person up to this date.',
-                                },
-                                {
-                                    title: 'Cumulative Risk',
-                                    field: 'cumulativeRiskPercentage',
-                                    type: 'numeric',
-                                    cellStyle: (value, rowData) => {
-                                        const {
-                                            cumulativeRiskAsPercent,
-                                        } = rowData;
+                                                return {
+                                                    color:
+                                                        risk1PlusEncountersAsPercent >
+                                                        cutoffRiskPerDay
+                                                            ? colors.red[700]
+                                                            : 'inherit',
+                                                };
+                                            },
+                                            tooltip:
+                                                'For date in row, chance of meeting at least one infected person this date.',
+                                        },
+                                        {
+                                            title: 'Cumulative Miss',
+                                            field: 'cumulativeMissPercentage',
+                                            type: 'numeric',
+                                            tooltip:
+                                                'For date in row, the chance of not meeting an infected person up to this date.',
+                                        },
+                                        {
+                                            title: 'Cumulative Risk',
+                                            field: 'cumulativeRiskPercentage',
+                                            type: 'numeric',
+                                            cellStyle: (value, rowData) => {
+                                                const {
+                                                    cumulativeRiskAsPercent,
+                                                } = rowData;
 
-                                        return {
-                                            color:
-                                                cumulativeRiskAsPercent >
-                                                cutoffRiskCumulative
-                                                    ? colors.red[700]
-                                                    : 'inherit',
-                                        };
-                                    },
-                                    tooltip:
-                                        'For date in row, the chance of meeting at least one infected person by this date.',
-                                },
-                            ]}
-                            data={riskData}
-                            options={{
-                                sorting: false,
-                                search: false,
-                                draggable: false,
-                                exportButton: true,
-                            }}
-                        />
+                                                return {
+                                                    color:
+                                                        cumulativeRiskAsPercent >
+                                                        cutoffRiskCumulative
+                                                            ? colors.red[700]
+                                                            : 'inherit',
+                                                };
+                                            },
+                                            tooltip:
+                                                'For date in row, the chance of meeting at least one infected person by this date.',
+                                        },
+                                    ]}
+                                    data={riskData}
+                                    options={{
+                                        sorting: false,
+                                        search: false,
+                                        draggable: false,
+                                        exportButton: true,
+                                    }}
+                                />
+                            </Grid>
+                        )}
+                        {displayCharts && (
+                            <Fragment>
+                                <Grid item xs={12} md={6}>
+                                    <Risk
+                                        title="Risk 1-Plus Encounters"
+                                        type="1plus"
+                                        chartData={risk1PlusChartData}
+                                        worryLevel={cutoffRiskPerDay}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <Risk
+                                        title="Cumulative Risk"
+                                        type="cumulative"
+                                        chartData={cumulativeRiskChartData}
+                                        worryLevel={cutoffRiskCumulative}
+                                    />
+                                </Grid>
+                            </Fragment>
+                        )}
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Risk
-                            title="Risk 1-Plus Encounters"
-                            type="1plus"
-                            chartData={risk1PlusChartData}
-                            worryLevel={cutoffRiskPerDay}
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Risk
-                            title="Cumulative Risk"
-                            type="cumulative"
-                            chartData={cumulativeRiskChartData}
-                            worryLevel={cutoffRiskCumulative}
-                        />
-                    </Grid>
-                </Grid>
-            </TabPanel>
+                </TabPanel>
+            )}
         </div>
     );
 };

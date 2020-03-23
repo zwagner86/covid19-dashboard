@@ -1,21 +1,26 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/display-name */
 import isNil from 'lodash/isNil';
-import React, {useContext} from 'react';
+import React, {Fragment, useContext} from 'react';
 // import clsx from 'clsx';
 // import moment from 'moment';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/styles';
 import {
     Button,
+    ExpansionPanel,
+    ExpansionPanelSummary,
+    ExpansionPanelDetails,
     LinearProgress,
     InputAdornment,
     Tooltip,
+    Typography,
 } from '@material-ui/core';
 import {Formik, Form, Field} from 'formik';
 import {TextField} from 'formik-material-ui';
 import {DatePicker} from 'formik-material-ui-pickers';
 import {MuiPickersUtilsProvider} from '@material-ui/pickers';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import MomentUtils from '@date-io/moment';
 import TextFieldWithNumberFormat from './TextFieldWithNumberFormat';
@@ -30,6 +35,20 @@ const useStyles = makeStyles(theme => ({
     },
     helpIcon: {
         fontSize: '1.2rem',
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+    expansionSummary: {
+        padding: theme.spacing(1),
+    },
+    expansionDetails: {
+        display: 'block',
+        padding: theme.spacing(1),
+    },
+    submitButton: {
+        marginBottom: theme.spacing(2),
     },
 }));
 
@@ -181,421 +200,500 @@ const SidebarSettings = ({disableForm}) => {
                 {({isSubmitting, isValid, submitForm}) => {
                     return (
                         <Form>
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="doublingTime"
-                                label="Doubling Time"
-                                placeholder="2.3"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="Between 1 and 3.  Lower is faster."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    step: '0.01',
-                                    min: 1,
-                                    max: 3,
-                                    decimalScale: 2,
-                                    fixedDecimalScale: true,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary
+                                    className={classes.expansionSummary}
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="case-content"
+                                    id="case-header"
+                                >
+                                    <Typography className={classes.heading}>
+                                        Case Settings
+                                    </Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails
+                                    className={classes.expansionDetails}
+                                >
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="doublingTime"
+                                        label="Doubling Time"
+                                        placeholder="2.3"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="Between 1 and 3.  Lower is faster."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            step: '0.01',
+                                            min: 1,
+                                            max: 3,
+                                            decimalScale: 2,
+                                            fixedDecimalScale: true,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={MetroSelect}
+                                        name="stateKey"
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="population"
+                                        label="Population"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The population of your metro area."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 1,
+                                            thousandSeparator: true,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="exposure"
+                                        label="Exposure"
+                                        placeholder="100"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The people you encounter in a day."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 0,
+                                            thousandSeparator: true,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={DatePicker}
+                                        name="startDate"
+                                        label="Start Date"
+                                        format="MMMM Do YYYY"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The start date of the pandemic."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextField}
+                                        name="numberOfDays"
+                                        label="Number of Days"
+                                        type="number"
+                                        placeholder="30"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The number of days to model since the start date."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 1,
+                                            max: 365,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextField}
+                                        name="baseCases"
+                                        label="Base Cases"
+                                        type="number"
+                                        placeholder="5"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The initial reported cases on the start date."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 0,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextField}
+                                        name="multiplier"
+                                        label="Multiplier"
+                                        type="number"
+                                        placeholder="5"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="For every reported case there will be X unreported cases.  Set that multiplier here."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 1,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary
+                                    className={classes.expansionSummary}
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="risk-content"
+                                    id="risk-header"
+                                >
+                                    <Typography className={classes.heading}>
+                                        Risk Settings
+                                    </Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails
+                                    className={classes.expansionDetails}
+                                >
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="cutoffRiskPerDay"
+                                        label="Risk Per Day"
+                                        placeholder="5"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The cutoff for the chance you encountered an infected person on a given day."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            step: '0.01',
+                                            min: 0,
+                                            max: 100,
+                                            decimalScale: 2,
+                                            fixedDecimalScale: true,
+                                            suffix: '%',
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="cutoffRiskCumulative"
+                                        label="Cumulative Risk"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The cutoff for the chance you encountered an infected person any day since the start date."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            step: '0.01',
+                                            min: 0,
+                                            max: 100,
+                                            decimalScale: 2,
+                                            fixedDecimalScale: true,
+                                            suffix: '%',
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary
+                                    className={classes.expansionSummary}
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="hospital-content"
+                                    id="hospital-header"
+                                >
+                                    <Typography className={classes.heading}>
+                                        Hospital Settings
+                                    </Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails
+                                    className={classes.expansionDetails}
+                                >
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="hospitalizationRate"
+                                        label="Hospitalization Rate"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The percentage of cases requiring hospitalization."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            step: '0.01',
+                                            min: 0,
+                                            max: 100,
+                                            decimalScale: 2,
+                                            fixedDecimalScale: true,
+                                            suffix: '%',
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="fatalityRate"
+                                        label="Fatality Rate"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The percentage of cases resulting in death."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            step: '0.01',
+                                            min: 0,
+                                            max: 100,
+                                            decimalScale: 2,
+                                            fixedDecimalScale: true,
+                                            suffix: '%',
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextField}
+                                        name="hospitalizationDelayInDays"
+                                        label="Hospitalization Delay (in days)"
+                                        type="number"
+                                        placeholder="9"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="Number of days from onset of symptoms to hospitalization."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 0,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextField}
+                                        name="hospitalizationStayInDays"
+                                        label="Hospital Stay (in days)"
+                                        type="number"
+                                        placeholder="10"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="Number of days for a hospital stay."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 0,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="hospitalBeds"
+                                        label="Hospital Beds"
+                                        placeholder="5000"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="Number of hospital beds in metro area."
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 0,
+                                            thousandSeparator: true,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
                             <br />
-                            <Field
-                                className={classes.field}
-                                component={MetroSelect}
-                                name="metroKey"
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="population"
-                                label="Population"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The population of your metro area."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 1,
-                                    thousandSeparator: true,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="exposure"
-                                label="Exposure"
-                                placeholder="100"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The people you encounter in a day."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 0,
-                                    thousandSeparator: true,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={DatePicker}
-                                name="startDate"
-                                label="Start Date"
-                                format="MMMM Do YYYY"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The start date of the pandemic."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextField}
-                                name="numberOfDays"
-                                label="Number of Days"
-                                type="number"
-                                placeholder="30"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The number of days to model since the start date."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 1,
-                                    max: 365,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextField}
-                                name="baseCases"
-                                label="Base Cases"
-                                type="number"
-                                placeholder="5"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The initial reported cases on the start date."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 0,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextField}
-                                name="multiplier"
-                                label="Multiplier"
-                                type="number"
-                                placeholder="5"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="For every reported case there will be X unreported cases.  Set that multiplier here."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 1,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="cutoffRiskPerDay"
-                                label="Risk Per Day"
-                                placeholder="5"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The cutoff for the chance you encountered an infected person on a given day."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    step: '0.01',
-                                    min: 0,
-                                    max: 100,
-                                    decimalScale: 2,
-                                    fixedDecimalScale: true,
-                                    suffix: '%',
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="cutoffRiskCumulative"
-                                label="Cumulative Risk"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The cutoff for the chance you encountered an infected person any day since the start date."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    step: '0.01',
-                                    min: 0,
-                                    max: 100,
-                                    decimalScale: 2,
-                                    fixedDecimalScale: true,
-                                    suffix: '%',
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="hospitalizationRate"
-                                label="Hospitalization Rate"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The percentage of cases requiring hospitalization."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    step: '0.01',
-                                    min: 0,
-                                    max: 100,
-                                    decimalScale: 2,
-                                    fixedDecimalScale: true,
-                                    suffix: '%',
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="fatalityRate"
-                                label="Fatality Rate"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="The percentage of cases resulting in death."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    step: '0.01',
-                                    min: 0,
-                                    max: 100,
-                                    decimalScale: 2,
-                                    fixedDecimalScale: true,
-                                    suffix: '%',
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextField}
-                                name="hospitalizationDelayInDays"
-                                label="Hospitalization Delay (in days)"
-                                type="number"
-                                placeholder="9"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="Number of days from onset of symptoms to hospitalization."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 0,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextField}
-                                name="hospitalizationStayInDays"
-                                label="Hospital Stay (in days)"
-                                type="number"
-                                placeholder="10"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="Number of days for a hospital stay."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 0,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            <Field
-                                className={classes.field}
-                                component={TextFieldWithNumberFormat}
-                                name="hospitalBeds"
-                                label="Hospital Beds"
-                                placeholder="5000"
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <Tooltip
-                                                title="Number of hospital beds in metro area."
-                                                arrow
-                                            >
-                                                <HelpOutlineIcon
-                                                    className={classes.helpIcon}
-                                                />
-                                            </Tooltip>
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                inputProps={{
-                                    min: 0,
-                                    thousandSeparator: true,
-                                }}
-                                disabled={disableForm}
-                                required
-                            />
-                            <br />
-                            {isSubmitting && <LinearProgress />}
-                            <br />
+                            {isSubmitting && (
+                                <Fragment>
+                                    <LinearProgress />
+                                    <br />
+                                </Fragment>
+                            )}
                             <Button
+                                className={classes.submitButton}
                                 variant="contained"
                                 color="primary"
                                 disabled={
