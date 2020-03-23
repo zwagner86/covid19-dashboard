@@ -1,4 +1,5 @@
 import isArray from 'lodash/isArray';
+import moment from 'moment';
 import statesData from '../data/countries/us.json';
 
 const StatesUtils = {
@@ -9,9 +10,9 @@ const StatesUtils = {
             return;
         }
 
-        const sortedStateInfo = stateInfo.sort((a, b) => a.date - b.date);
-
-        return sortedStateInfo;
+        return stateInfo.sort((a, b) => {
+            return moment(a.date).diff(moment(b.date));
+        });
     },
 };
 
