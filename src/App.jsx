@@ -98,7 +98,7 @@ const initialSettings = {
     doublingTime: doublingTime || 2.3,
     countryCode,
     stateKey: state.key,
-    population: population || state.population,
+    population: population || state.population || 1000000,
     exposure,
     startDate: startDateMoment,
     numberOfDays,

@@ -200,7 +200,7 @@ const SidebarSettings = ({disableForm}) => {
                 {({isSubmitting, isValid, submitForm}) => {
                     return (
                         <Form>
-                            <ExpansionPanel>
+                            <ExpansionPanel defaultExpanded>
                                 <ExpansionPanelSummary
                                     className={classes.expansionSummary}
                                     expandIcon={<ExpandMoreIcon />}
@@ -225,6 +225,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="Between 1 and 3.  Lower is faster."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -265,6 +266,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The population of your metro area."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -295,6 +297,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The people you encounter in a day."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -325,6 +328,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The start date of the pandemic."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -352,6 +356,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The number of days to model since the start date."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -383,6 +388,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The initial reported cases on the start date."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -413,6 +419,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="For every reported case there will be X unreported cases.  Set that multiplier here."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -457,6 +464,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The cutoff for the chance you encountered an infected person on a given day."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -490,6 +498,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The cutoff for the chance you encountered an infected person any day since the start date."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -538,6 +547,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The percentage of cases requiring hospitalization."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -571,6 +581,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="The percentage of cases resulting in death."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -606,6 +617,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="Number of days from onset of symptoms to hospitalization."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -636,6 +648,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="Number of days for a hospital stay."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
@@ -665,6 +678,7 @@ const SidebarSettings = ({disableForm}) => {
                                                 <InputAdornment position="end">
                                                     <Tooltip
                                                         title="Number of hospital beds in metro area."
+                                                        enterTouchDelay={0}
                                                         arrow
                                                     >
                                                         <HelpOutlineIcon
