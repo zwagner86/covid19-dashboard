@@ -80,7 +80,9 @@ const {
 // TODO: expand on this when other countries are supported
 const statesToSearch = countryCode.toUpperCase() === 'USA' ? states : states;
 const state = find(statesToSearch, {key: stateCode}) || statesToSearch[0];
-const initialStateData = StatesUtils.getStateInfoByKey(state.key);
+const initialStateData = StatesUtils.getStateInfoByKey(state.key, {
+    fromFirstCase: true,
+});
 const startDateMoment = startDate
     ? moment(startDate)
     : initialStateData

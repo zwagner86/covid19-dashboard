@@ -1,10 +1,12 @@
 import find from 'lodash/find';
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import states from '../../../../../../data/regions/usa/states';
 // import {makeStyles} from '@material-ui/styles';
 import {MenuItem} from '@material-ui/core';
 import {TextField} from 'formik-material-ui';
+import StatesUtils from '../../../../../../utils/states';
 
 const MetroSelect = ({field, onSelectChange, ...props}) => {
     const {onChange: onFieldChange, value} = field;
@@ -21,9 +23,24 @@ const MetroSelect = ({field, onSelectChange, ...props}) => {
             if (selectedKey === 'other') {
                 setFieldValue('population', 1); // eslint-disable-line
             } else {
-                const metro = find(states, {key: selectedKey});
+                const state = find(states, {key: selectedKey});
+                const stateReportedData = StatesUtils.getStateInfoByKey(
+                    selectedKey,
+                    {fromFirstCase: true}
+                );
 
-                setFieldValue('population', metro ? metro.population : 1);
+                setFieldValue('population', state ? state.population : 1);
+
+                if (stateReportedData) {
+                    setFieldValue(
+                        'startDate',
+                        moment(stateReportedData[0].date)
+                    );
+
+                    const baseCases = stateReportedData[0].cases || 1;
+
+                    setFieldValue('baseCases', baseCases);
+                }
             }
         }
     };

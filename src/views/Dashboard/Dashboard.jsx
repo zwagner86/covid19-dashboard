@@ -1,8 +1,10 @@
+import find from 'lodash/find';
 import range from 'lodash/range';
 import React, {Fragment, useContext, useState} from 'react';
 import moment from 'moment';
 import {colors, Grid, Paper, Tabs, Tab} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
+import StatesUtils from '../../utils/states';
 import {MaterialTable} from '../../components';
 import SettingsContext from '../../SettingsContext';
 import TabPanel from './components/TabPanel';
@@ -49,6 +51,7 @@ const Dashboard = props => {
             onlyCharts,
             onlyTables,
             doublingTime,
+            stateKey,
             population,
             exposure,
             startDate,
@@ -65,6 +68,7 @@ const Dashboard = props => {
         },
     } = useContext(SettingsContext);
     const [activeTabIndex, setActiveTabIndex] = useState(0);
+    const stateData = StatesUtils.getStateInfoByKey(stateKey);
     const handleChange = (event, newIndex) => {
         setActiveTabIndex(newIndex);
     };
@@ -73,6 +77,33 @@ const Dashboard = props => {
     const displayRiskTab = onlyRisk || !onlyCase;
     const displayCharts = onlyCharts || !onlyTables;
     const displayTables = onlyTables || !onlyCharts;
+    const caseTableColumns = [
+        {
+            title: 'Date',
+            field: 'dateWithDay',
+            type: 'date',
+        },
+        {
+            title: 'Reported Cases',
+            field: 'reportedCasesRounded',
+            type: 'numeric',
+            tooltip: 'Estimate of number of CDC reported cases.',
+        },
+        {
+            title: 'Projected Cases',
+            field: 'projectedCasesRounded',
+            type: 'numeric',
+            tooltip:
+                'The true amount of cases.  Projected Cases = Reported Cases x Multiplier.',
+        },
+        {
+            title: 'Projected Rate',
+            field: 'projectedRatePercentage',
+            type: 'numeric',
+            tooltip:
+                'The percentage of those infected.  Projected Rate = Projected Cases / Population.',
+        },
+    ];
     const projectionData = [];
     const riskData = [];
     const hospitalizationData = [];
@@ -81,7 +112,7 @@ const Dashboard = props => {
         datasets: [
             {
                 label: 'Projected Cases',
-                fill: true,
+                fill: false,
                 lineTension: 0.1,
                 borderColor: colors.blue[600],
                 pointBorderColor: colors.blue[600],
@@ -96,6 +127,22 @@ const Dashboard = props => {
                 data: [],
             },
         ],
+    };
+    const cdcDataset = {
+        label: 'CDC Cases Scaled',
+        fill: false,
+        lineTension: 0.1,
+        borderColor: colors.red[600],
+        pointBorderColor: colors.red[600],
+        pointBackgroundColor: '#fff',
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: colors.red[600],
+        pointHoverBorderColor: colors.grey[50],
+        pointHoverBorderWidth: 2,
+        pointRadius: 3,
+        pointHitRadius: 10,
+        data: [],
     };
     const risk1PlusChartData = {
         labels: [],
@@ -187,6 +234,21 @@ const Dashboard = props => {
             projectedRatePercentage,
         };
 
+        if (stateData) {
+            const cdcData = find(stateData, {
+                date: dateMoment.format('YYYY-MM-DD'),
+            });
+            /* eslint-disable no-undefined */
+            const cases = cdcData ? cdcData.cases : undefined;
+            const casesScaled = cdcData ? cases * multiplier : undefined;
+            /* eslint-enable no-undefined */
+
+            projection.cdcCases = cases;
+            projection.cdcCasesScaled = casesScaled;
+
+            cdcDataset.data.push(casesScaled);
+        }
+
         projectionData.push(projection);
         projectionsChartData.labels.push(date);
         projectionsChartData.datasets[0].data.push(projectedCasesRounded);
@@ -264,6 +326,23 @@ const Dashboard = props => {
         hospitalBedsChartData.datasets[0].data.push(netBeds);
     }
 
+    if (stateData) {
+        projectionsChartData.datasets.push(cdcDataset);
+        caseTableColumns.push({
+            title: 'CDC Reported Cases',
+            field: 'cdcCases',
+            type: 'numeric',
+            tooltip: 'The number of cases reported by the CDC',
+        });
+        caseTableColumns.push({
+            title: 'CDC Scaled Cases',
+            field: 'cdcCasesScaled',
+            type: 'numeric',
+            tooltip:
+                'The number of reported CDC cases scaled by the multiplier',
+        });
+    }
+
     return (
         <div className={classes.root}>
             <Paper className={classes.tabBar} square>
@@ -286,35 +365,7 @@ const Dashboard = props => {
                                 <Grid item xs={12}>
                                     <MaterialTable
                                         title="Cases"
-                                        columns={[
-                                            {
-                                                title: 'Date',
-                                                field: 'dateWithDay',
-                                                type: 'date',
-                                            },
-                                            {
-                                                title: 'Reported Cases',
-                                                field: 'reportedCasesRounded',
-                                                type: 'numeric',
-                                                tooltip:
-                                                    'Estimate of number of CDC reported cases.',
-                                            },
-                                            {
-                                                title: 'Projected Cases',
-                                                field: 'projectedCasesRounded',
-                                                type: 'numeric',
-                                                tooltip:
-                                                    'The true amount of cases.  Projected Cases = Reported Cases x Multiplier.',
-                                            },
-                                            {
-                                                title: 'Projected Rate',
-                                                field:
-                                                    'projectedRatePercentage',
-                                                type: 'numeric',
-                                                tooltip:
-                                                    'The percentage of those infected.  Projected Rate = Projected Cases / Population.',
-                                            },
-                                        ]}
+                                        columns={caseTableColumns}
                                         data={projectionData}
                                         options={{
                                             sorting: false,
