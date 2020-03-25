@@ -27,12 +27,48 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Risk = props => {
-    const {className, chartData, type, title, worryLevel, ...rest} = props;
+    const {
+        className,
+        type,
+        title,
+        chartLabels,
+        chartData,
+        worryLevel,
+        ...rest
+    } = props;
     const classes = useStyles();
     const [lineType, setLineType] = useState('linear');
 
     const handleChange = event => {
         setLineType(event.target.value);
+    };
+
+    const chartDataset = {
+        labels: chartLabels,
+        datasets: [
+            {
+                label:
+                    type === '1plus'
+                        ? 'Risk 1-Plus Encounters'
+                        : 'Cumulative Risk',
+                fill: true,
+                lineTension: 0.1,
+                borderColor:
+                    type === '1plus' ? colors.blue[600] : colors.orange[800],
+                pointBorderColor:
+                    type === '1plus' ? colors.blue[600] : colors.orange[800],
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor:
+                    type === '1plus' ? colors.blue[600] : colors.orange[800],
+                pointHoverBorderColor: colors.grey[50],
+                pointHoverBorderWidth: 2,
+                pointRadius: 3,
+                pointHitRadius: 10,
+                data: chartData,
+            },
+        ],
     };
 
     const options = {
@@ -126,7 +162,7 @@ const Risk = props => {
             <Divider />
             <CardContent>
                 <div className={classes.chartContainer}>
-                    <Line data={chartData} options={options} />
+                    <Line data={chartDataset} options={options} redraw />
                 </div>
             </CardContent>
         </Card>
@@ -137,7 +173,8 @@ Risk.propTypes = {
     className: PropTypes.string,
     type: PropTypes.oneOf(['1plus', 'cumulative']).isRequired,
     title: PropTypes.string.isRequired,
-    chartData: PropTypes.object.isRequired,
+    chartLabels: PropTypes.array.isRequired,
+    chartData: PropTypes.array.isRequired,
     worryLevel: PropTypes.number,
 };
 

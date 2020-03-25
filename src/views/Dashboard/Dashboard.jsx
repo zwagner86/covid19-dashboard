@@ -107,106 +107,15 @@ const Dashboard = props => {
     const projectionData = [];
     const riskData = [];
     const hospitalizationData = [];
-    const projectionsChartData = {
-        labels: [],
-        datasets: [
-            {
-                label: 'Projected Cases',
-                fill: false,
-                lineTension: 0.1,
-                borderColor: colors.blue[600],
-                pointBorderColor: colors.blue[600],
-                pointBackgroundColor: '#fff',
-                pointBorderWidth: 1,
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: colors.blue[600],
-                pointHoverBorderColor: colors.grey[50],
-                pointHoverBorderWidth: 2,
-                pointRadius: 3,
-                pointHitRadius: 10,
-                data: [],
-            },
-        ],
-    };
-    const cdcDataset = {
-        label: 'CDC Cases Scaled',
-        fill: false,
-        lineTension: 0.1,
-        borderColor: colors.red[600],
-        pointBorderColor: colors.red[600],
-        pointBackgroundColor: '#fff',
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.red[600],
-        pointHoverBorderColor: colors.grey[50],
-        pointHoverBorderWidth: 2,
-        pointRadius: 3,
-        pointHitRadius: 10,
-        data: [],
-    };
-    const risk1PlusChartData = {
-        labels: [],
-        datasets: [
-            {
-                label: 'Risk 1-Plus Encounters',
-                fill: true,
-                lineTension: 0.1,
-                borderColor: colors.blue[600],
-                pointBorderColor: colors.blue[600],
-                pointBackgroundColor: '#fff',
-                pointBorderWidth: 1,
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: colors.blue[600],
-                pointHoverBorderColor: colors.grey[50],
-                pointHoverBorderWidth: 2,
-                pointRadius: 3,
-                pointHitRadius: 10,
-                data: [],
-            },
-        ],
-    };
-    const cumulativeRiskChartData = {
-        labels: [],
-        datasets: [
-            {
-                label: 'Cumulative Risk',
-                fill: true,
-                lineTension: 0.1,
-                borderColor: colors.orange[800],
-                pointBorderColor: colors.orange[800],
-                pointBackgroundColor: '#fff',
-                pointBorderWidth: 1,
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: colors.orange[800],
-                pointHoverBorderColor: colors.grey[50],
-                pointHoverBorderWidth: 2,
-                pointRadius: 3,
-                pointHitRadius: 10,
-                data: [],
-            },
-        ],
-    };
-    const hospitalBedsChartData = {
-        labels: [],
-        datasets: [
-            {
-                label: 'Occupied Hospital Beds',
-                fill: true,
-                lineTension: 0.1,
-                borderColor: colors.orange[800],
-                pointBorderColor: colors.orange[800],
-                pointBackgroundColor: '#fff',
-                pointBorderWidth: 1,
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: colors.orange[800],
-                pointHoverBorderColor: colors.grey[50],
-                pointHoverBorderWidth: 2,
-                pointRadius: 3,
-                pointHitRadius: 10,
-                data: [],
-            },
-        ],
-    };
+    const projectionsChartLabels = [];
+    const projectionsChartData = [];
+    const cdcChartData = [];
+    const risk1PlusChartLabels = [];
+    const risk1PlusChartData = [];
+    const cumulativeRiskChartLabels = [];
+    const cumulativeRiskChartData = [];
+    const hospitalBedsChartLabels = [];
+    const hospitalBedsChartData = [];
 
     for (const index of range(numberOfDays)) {
         // dates used for both projected and risk tables
@@ -246,12 +155,12 @@ const Dashboard = props => {
             projection.cdcCases = cases;
             projection.cdcCasesScaled = casesScaled;
 
-            cdcDataset.data.push(casesScaled);
+            cdcChartData.push(casesScaled);
         }
 
         projectionData.push(projection);
-        projectionsChartData.labels.push(date);
-        projectionsChartData.datasets[0].data.push(projectedCasesRounded);
+        projectionsChartLabels.push(date);
+        projectionsChartData.push(projectedCasesRounded);
 
         // risk calculations
         const encountersPerDay = (projectedRate * exposure).toFixed(3);
@@ -289,10 +198,10 @@ const Dashboard = props => {
         };
 
         riskData.push(risk);
-        risk1PlusChartData.labels.push(date);
-        risk1PlusChartData.datasets[0].data.push(risk1PlusEncounters);
-        cumulativeRiskChartData.labels.push(date);
-        cumulativeRiskChartData.datasets[0].data.push(cumulativeRisk);
+        risk1PlusChartLabels.push(date);
+        risk1PlusChartData.push(risk1PlusEncounters);
+        cumulativeRiskChartLabels.push(date);
+        cumulativeRiskChartData.push(cumulativeRisk);
 
         // hospital calculations
         const hospitalizationRateDecimal = hospitalizationRate / 100;
@@ -322,12 +231,11 @@ const Dashboard = props => {
         };
 
         hospitalizationData.push(hospital);
-        hospitalBedsChartData.labels.push(date);
-        hospitalBedsChartData.datasets[0].data.push(netBeds);
+        hospitalBedsChartLabels.push(date);
+        hospitalBedsChartData.push(netBeds);
     }
 
     if (stateData) {
-        projectionsChartData.datasets.push(cdcDataset);
         caseTableColumns.push({
             title: 'CDC Reported Cases',
             field: 'cdcCases',
@@ -421,12 +329,16 @@ const Dashboard = props => {
                             <Fragment>
                                 <Grid item xs={12} md={6}>
                                     <ProjectedCases
-                                        chartData={projectionsChartData}
+                                        chartLabels={projectionsChartLabels}
+                                        projectionsData={projectionsChartData}
+                                        cdcData={cdcChartData}
+                                        population={population}
                                     />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <HospitalBeds
                                         title="Occupied Hospital Beds"
+                                        chartLabels={hospitalBedsChartLabels}
                                         chartData={hospitalBedsChartData}
                                         hospitalBedCapacity={hospitalBeds}
                                     />
@@ -521,6 +433,7 @@ const Dashboard = props => {
                                     <Risk
                                         title="Risk 1-Plus Encounters"
                                         type="1plus"
+                                        chartLabels={risk1PlusChartLabels}
                                         chartData={risk1PlusChartData}
                                         worryLevel={cutoffRiskPerDay}
                                     />
@@ -529,6 +442,7 @@ const Dashboard = props => {
                                     <Risk
                                         title="Cumulative Risk"
                                         type="cumulative"
+                                        chartLabels={cumulativeRiskChartLabels}
                                         chartData={cumulativeRiskChartData}
                                         worryLevel={cutoffRiskCumulative}
                                     />

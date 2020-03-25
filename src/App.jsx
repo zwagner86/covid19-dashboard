@@ -72,7 +72,7 @@ const {
     fatalityRate = 2,
     hospDelay = 9,
     hospStay = 10,
-    hospBeds = 33000,
+    hospBeds,
 } = queryString.parse(location.search, {
     parseBooleans: true,
     parseNumbers: true,
@@ -113,7 +113,7 @@ const initialSettings = {
     fatalityRate,
     hospitalizationDelayInDays: hospDelay,
     hospitalizationStayInDays: hospStay,
-    hospitalBeds: hospBeds,
+    hospitalBeds: hospBeds || state.hospitalBeds || 15000,
 };
 
 const App = props => {

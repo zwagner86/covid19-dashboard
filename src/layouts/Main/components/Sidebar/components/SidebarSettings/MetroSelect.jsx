@@ -21,7 +21,7 @@ const MetroSelect = ({field, onSelectChange, ...props}) => {
 
         if (selectedKey !== value) {
             if (selectedKey === 'other') {
-                setFieldValue('population', 1); // eslint-disable-line
+                setFieldValue('population', 15000); // eslint-disable-line
             } else {
                 const state = find(states, {key: selectedKey});
                 const stateReportedData = StatesUtils.getStateInfoByKey(
@@ -29,7 +29,11 @@ const MetroSelect = ({field, onSelectChange, ...props}) => {
                     {fromFirstCase: true}
                 );
 
-                setFieldValue('population', state ? state.population : 1);
+                setFieldValue('population', state ? state.population : 15000);
+                setFieldValue(
+                    'hospitalBeds',
+                    state ? state.hospitalBeds : 7000
+                );
 
                 if (stateReportedData) {
                     setFieldValue(

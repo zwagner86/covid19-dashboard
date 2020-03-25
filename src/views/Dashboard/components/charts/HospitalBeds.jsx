@@ -1,9 +1,10 @@
+import some from 'lodash/some';
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import numeral from 'numeral';
 import {Line} from 'react-chartjs-2';
 import 'chartjs-plugin-annotation';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import numeral from 'numeral';
 import {makeStyles} from '@material-ui/styles';
 import {
     colors,
@@ -27,12 +28,41 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const HospitalBeds = props => {
-    const {className, chartData, title, hospitalBedCapacity, ...rest} = props;
+    const {
+        className,
+        title,
+        chartLabels,
+        chartData,
+        hospitalBedCapacity,
+        ...rest
+    } = props;
     const classes = useStyles();
     const [lineType, setLineType] = useState('linear');
 
     const handleChange = event => {
         setLineType(event.target.value);
+    };
+
+    const chartDataset = {
+        labels: chartLabels,
+        datasets: [
+            {
+                label: 'Occupied Hospital Beds',
+                fill: false,
+                lineTension: 0.1,
+                borderColor: colors.orange[800],
+                pointBorderColor: colors.orange[800],
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: colors.orange[800],
+                pointHoverBorderColor: colors.grey[50],
+                pointHoverBorderWidth: 2,
+                pointRadius: 3,
+                pointHitRadius: 10,
+                data: chartData,
+            },
+        ],
     };
 
     const options = {
@@ -71,7 +101,15 @@ const HospitalBeds = props => {
                 },
             },
         },
-        annotation: {
+        maintainAspectRatio: false,
+    };
+
+    const bedsNearTotalBeds = some(chartData, usedBeds => {
+        return usedBeds > hospitalBedCapacity * 0.6;
+    });
+
+    if (bedsNearTotalBeds) {
+        const annotation = {
             annotations: [
                 {
                     drawTime: 'beforeDatasetsDraw',
@@ -89,9 +127,10 @@ const HospitalBeds = props => {
                     },
                 },
             ],
-        },
-        maintainAspectRatio: false,
-    };
+        };
+
+        options.annotation = annotation;
+    }
 
     if (lineType === 'linear') {
         options.scales.yAxes[0].ticks = {
@@ -124,7 +163,7 @@ const HospitalBeds = props => {
             <Divider />
             <CardContent>
                 <div className={classes.chartContainer}>
-                    <Line data={chartData} options={options} />
+                    <Line data={chartDataset} options={options} redraw />
                 </div>
             </CardContent>
         </Card>
@@ -134,7 +173,8 @@ const HospitalBeds = props => {
 HospitalBeds.propTypes = {
     className: PropTypes.string,
     title: PropTypes.string.isRequired,
-    chartData: PropTypes.object.isRequired,
+    chartLabels: PropTypes.array.isRequired,
+    chartData: PropTypes.array.isRequired,
     hospitalBedCapacity: PropTypes.number,
 };
 
