@@ -87,10 +87,14 @@ class Covid
     counts << (1.0 * counts[0] / counts[-1]).round(2) # add ignorance
     counts = counts.zip(@targets + [:ignorance]).map do |v, k|
       vd, v0 = refs[k]
-      v = (1.0 * v / v0).round(1)
-      dt = (d1 - vd).to_i
-      doublings = Math.log(v) / Math.log(2)
-      (dt / doublings).round(1)
+      if v0.nil?
+        'NA'
+      else
+        v = (1.0 * v / v0).round(1)
+        dt = (d1 - vd).to_i
+        doublings = Math.log(v) / Math.log(2)
+        (dt / doublings).round(1)
+      end
     end
     out << ['d-time'] + counts
 
@@ -110,14 +114,19 @@ class Covid
     @latitudes[state]
   end
 
+  def us_states
+    load_us_data.keys
+  end
 
   def load_us_data
     s = Struct.new(*@targets)
     ret = {}
     path = File.join(File.dirname(__FILE__), 'data', 'countries_raw', 'us_date.txt')
     open(path).each_struct do |record|
+      next if record[:date].nil?
+      next if record[:date].empty?
+      next if record[:date].start_with?('#')
       @targets.each { |k| record[k.to_sym] = record[k.to_sym].to_i }
-
       s1 = ret[record[:state].to_sym] ||= {}
       s1[record[:date]] = s.new(*@targets.map { |k| record[k] } )
 
@@ -131,3 +140,18 @@ end
 c = Covid.new
 path = File.join(File.dirname(__FILE__), 'data', 'countries', 'us.json')
 c.json(path)
+res = c.us_states.map do |state|
+  [c.state_stats(state).split("\n")[-1].split("\t")[1], state]
+end.sort.each do |d,s|
+  puts [s,d].join("\t")
+end
+puts '-------------------'
+ARGV.each do |state|
+  puts c.state_stats(state.to_sym)
+  puts
+end
+
+c.us_states.each do |state|
+  puts [state, c.state_stats(state.to_sym).split("\n")[-2].split("\t")[3]].join("\t")
+end
+
