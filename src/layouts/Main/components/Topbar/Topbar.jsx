@@ -11,6 +11,8 @@ const useStyles = makeStyles(theme => ({
         boxShadow: 'none',
     },
     title: {
+        fontSize: '1.1rem',
+        fontWeight: 'bold',
         flexGrow: 1,
         textAlign: 'center',
         [theme.breakpoints.down('md')]: {

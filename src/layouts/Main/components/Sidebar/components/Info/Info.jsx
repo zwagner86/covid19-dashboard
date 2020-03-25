@@ -10,6 +10,9 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         minHeight: 'fit-content',
     },
+    title: {
+        fontSize: '1.1rem',
+    },
 }));
 
 const Info = props => {

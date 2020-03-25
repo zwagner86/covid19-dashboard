@@ -1,10 +1,12 @@
 import find from 'lodash/find';
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import metros, {otherMetro} from '../../../../../../data/metros';
+import moment from 'moment';
+import states from '../../../../../../data/regions/usa/states';
 // import {makeStyles} from '@material-ui/styles';
 import {MenuItem} from '@material-ui/core';
 import {TextField} from 'formik-material-ui';
+import StatesUtils from '../../../../../../utils/states';
 
 const MetroSelect = ({field, onSelectChange, ...props}) => {
     const {onChange: onFieldChange, value} = field;
@@ -19,11 +21,30 @@ const MetroSelect = ({field, onSelectChange, ...props}) => {
 
         if (selectedKey !== value) {
             if (selectedKey === 'other') {
-                setFieldValue('population', otherMetro.population); // eslint-disable-line
+                setFieldValue('population', 15000); // eslint-disable-line
             } else {
-                const metro = find(metros, {key: selectedKey});
+                const state = find(states, {key: selectedKey});
+                const stateReportedData = StatesUtils.getStateInfoByKey(
+                    selectedKey,
+                    {fromFirstCase: true}
+                );
 
-                setFieldValue('population', metro ? metro.population : 1);
+                setFieldValue('population', state ? state.population : 15000);
+                setFieldValue(
+                    'hospitalBeds',
+                    state ? state.hospitalBeds : 7000
+                );
+
+                if (stateReportedData) {
+                    setFieldValue(
+                        'startDate',
+                        moment(stateReportedData[0].date)
+                    );
+
+                    const baseCases = stateReportedData[0].cases || 1;
+
+                    setFieldValue('baseCases', baseCases);
+                }
             }
         }
     };
@@ -43,14 +64,14 @@ const MetroSelect = ({field, onSelectChange, ...props}) => {
                 label="City/Country"
                 {...selectProps}
             >
-                {metros.map(metroObj => {
+                {states.map(stateObj => {
                     return (
-                        <MenuItem key={metroObj.key} value={metroObj.key}>
-                            {metroObj.name}
+                        <MenuItem key={stateObj.key} value={stateObj.key}>
+                            {stateObj.name}
                         </MenuItem>
                     );
                 })}
-                <MenuItem value={otherMetro.key}>{otherMetro.name}</MenuItem>
+                <MenuItem value="other">Other</MenuItem>
             </TextField>
         </Fragment>
     );
