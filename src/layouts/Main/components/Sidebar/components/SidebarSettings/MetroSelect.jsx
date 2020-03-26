@@ -3,11 +3,11 @@ import isEmpty from 'lodash/isEmpty';
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import regions from '../../../../../../data/regions';
+import regions from '/data/regions';
 // import {makeStyles} from '@material-ui/styles';
 import {ListSubheader, MenuItem} from '@material-ui/core';
 import {TextField} from 'formik-material-ui';
-import RegionUtils from '../../../../../../utils/region';
+import RegionUtils from '/utils/region';
 
 const MetroSelect = ({field, selectedCountry, onSelectChange, ...props}) => {
     const {onChange: onFieldChange, value} = field;

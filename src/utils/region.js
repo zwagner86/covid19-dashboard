@@ -1,7 +1,7 @@
 import findIndex from 'lodash/findIndex';
 import isArray from 'lodash/isArray';
 import moment from 'moment';
-import usaData from '../data/countries/us.json';
+import usaData from '/data/countries/us.json';
 
 const RegionUtils = {
     getRegionInfoByKey({

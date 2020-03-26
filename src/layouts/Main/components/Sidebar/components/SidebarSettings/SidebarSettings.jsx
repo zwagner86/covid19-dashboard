@@ -26,7 +26,7 @@ import MomentUtils from '@date-io/moment';
 import TextFieldWithNumberFormat from './TextFieldWithNumberFormat';
 import CountrySelect from './CountrySelect';
 import MetroSelect from './MetroSelect';
-import SettingsContext from '../../../../../../SettingsContext';
+import SettingsContext from '/SettingsContext';
 
 const useStyles = makeStyles(theme => ({
     root: {},

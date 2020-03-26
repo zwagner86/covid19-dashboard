@@ -2,11 +2,11 @@ import keys from 'lodash/keys';
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import regions from '../../../../../../data/regions';
+import regions from '/data/regions';
 // import {makeStyles} from '@material-ui/styles';
 import {MenuItem} from '@material-ui/core';
 import {TextField} from 'formik-material-ui';
-import RegionUtils from '../../../../../../utils/region';
+import RegionUtils from '/utils/region';
 
 const CountrySelect = ({field, onSelectChange, ...props}) => {
     const {onChange: onFieldChange, value} = field;
