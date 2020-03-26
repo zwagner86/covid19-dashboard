@@ -1,0 +1,12 @@
+###################################################################################
+# Set up the current environment for testing and running code without installing.
+# % source source_me
+###################################################################################
+
+# pretend our gems have already been installed
+# let the local bin directory be in the path
+export RUBYLIB=./lib
+export PATH=./bin:$PATH
+export PATH=~/anaconda3/bin/:$PATH
+export j='jupyter notebook'
+rvm use `cat .ruby-version`
