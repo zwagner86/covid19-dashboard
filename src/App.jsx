@@ -53,7 +53,11 @@ const {
 });
 // TODO: expand on this when other countries are supported
 const regionsToSearch = regions[countryCode.toLowerCase()] || regions.usa;
-const popsToSearch = [...regionsToSearch.regions, ...regionsToSearch.states];
+const popsToSearch = [
+    ...regionsToSearch.country,
+    ...regionsToSearch.regions,
+    ...regionsToSearch.states,
+];
 const region = find(popsToSearch, {key: regionCode}) || popsToSearch[0];
 const initialRegionData = RegionUtils.getRegionInfoByKey({
     countryCode,
