@@ -4,7 +4,7 @@ import React, {Fragment, useContext, useState} from 'react';
 import moment from 'moment';
 import {colors, Grid, Paper, Tabs, Tab} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import StatesUtils from '../../utils/states';
+import RegionUtils from '../../utils/region';
 import {MaterialTable} from '../../components';
 import SettingsContext from '../../SettingsContext';
 import TabPanel from './components/TabPanel';
@@ -53,7 +53,8 @@ const Dashboard = props => {
             hideHospitalChart,
             defaultChartScale,
             doublingTime,
-            stateKey,
+            countryCode,
+            regionKey,
             population,
             exposure,
             startDate,
@@ -70,7 +71,7 @@ const Dashboard = props => {
         },
     } = useContext(SettingsContext);
     const [activeTabIndex, setActiveTabIndex] = useState(0);
-    const stateData = StatesUtils.getStateInfoByKey(stateKey);
+    const regionData = RegionUtils.getRegionInfoByKey({countryCode, regionKey});
     const handleChange = (event, newIndex) => {
         setActiveTabIndex(newIndex);
     };
@@ -145,8 +146,8 @@ const Dashboard = props => {
             projectedRatePercentage,
         };
 
-        if (stateData) {
-            const cdcData = find(stateData, {
+        if (regionData) {
+            const cdcData = find(regionData, {
                 date: dateMoment.format('YYYY-MM-DD'),
             });
             /* eslint-disable no-undefined */
@@ -237,7 +238,7 @@ const Dashboard = props => {
         hospitalBedsChartData.push(netBeds);
     }
 
-    if (stateData) {
+    if (regionData) {
         caseTableColumns.push({
             title: 'CDC Reported Cases',
             field: 'cdcCases',

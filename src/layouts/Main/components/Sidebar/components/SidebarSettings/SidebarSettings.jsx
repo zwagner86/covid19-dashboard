@@ -24,6 +24,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import MomentUtils from '@date-io/moment';
 import TextFieldWithNumberFormat from './TextFieldWithNumberFormat';
+import CountrySelect from './CountrySelect';
 import MetroSelect from './MetroSelect';
 import SettingsContext from '../../../../../../SettingsContext';
 
@@ -197,7 +198,7 @@ const SidebarSettings = ({disableForm}) => {
                     setSubmitting(false);
                 }}
             >
-                {({isSubmitting, isValid, submitForm}) => {
+                {({isSubmitting, isValid, submitForm, values}) => {
                     return (
                         <Form>
                             <ExpansionPanel defaultExpanded>
@@ -250,8 +251,17 @@ const SidebarSettings = ({disableForm}) => {
                                     <br />
                                     <Field
                                         className={classes.field}
+                                        component={CountrySelect}
+                                        name="countryCode"
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
+                                    <Field
+                                        className={classes.field}
                                         component={MetroSelect}
-                                        name="stateKey"
+                                        name="regionKey"
+                                        selectedCountry={values.countryCode}
                                         disabled={disableForm}
                                         required
                                     />

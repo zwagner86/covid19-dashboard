@@ -8,14 +8,14 @@ import {ThemeProvider} from '@material-ui/styles';
 
 import {chartjs} from './helpers';
 import theme from './theme';
-import states from './data/regions/usa/states';
+import regions from './data/regions';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './App.scss';
 
 import {SettingsProvider} from './SettingsContext';
 import {Main as MainLayout} from './layouts';
 import Dashboard from './views/Dashboard/Dashboard';
-import StatesUtils from './utils/states';
+import RegionUtils from './utils/region';
 
 Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
     draw: chartjs.draw,
@@ -31,8 +31,8 @@ const {
     hideHospitalChart,
     defaultChartScale = 'linear',
     doublingTime = 2.3,
-    countryCode = 'USA',
-    stateCode = 'IL',
+    countryCode = 'usa',
+    regionCode = 'IL',
     population,
     exposure = 100,
     startDate,
@@ -52,15 +52,18 @@ const {
     parseNumbers: true,
 });
 // TODO: expand on this when other countries are supported
-const statesToSearch = countryCode.toUpperCase() === 'USA' ? states : states;
-const state = find(statesToSearch, {key: stateCode}) || statesToSearch[0];
-const initialStateData = StatesUtils.getStateInfoByKey(state.key, {
+const regionsToSearch = regions[countryCode.toLowerCase()] || regions.usa;
+const popsToSearch = [...regionsToSearch.regions, ...regionsToSearch.states];
+const region = find(popsToSearch, {key: regionCode}) || popsToSearch[0];
+const initialRegionData = RegionUtils.getRegionInfoByKey({
+    countryCode,
+    regionKey: region.key,
     fromFirstCase: true,
 });
 const startDateMoment = startDate
     ? moment(startDate)
-    : initialStateData
-    ? moment(initialStateData[0].date)
+    : initialRegionData
+    ? moment(initialRegionData[0].date)
     : moment().subtract(7, 'days');
 const lastDateMoment = lastDate
     ? moment(lastDate)
@@ -76,12 +79,12 @@ const initialSettings = {
     defaultChartScale,
     doublingTime: doublingTime || 2.3,
     countryCode,
-    stateKey: state.key,
-    population: population || state.population || 1000000,
+    regionKey: region.key,
+    population: population || region.population || 1000000,
     exposure,
     startDate: startDateMoment,
     numberOfDays,
-    baseCases: baseCases || initialStateData ? initialStateData[0].cases : 5,
+    baseCases: baseCases || initialRegionData ? initialRegionData[0].cases : 5,
     multiplier,
     cutoffRiskPerDay: riskPerDay,
     cutoffRiskCumulative: cumRisk,
@@ -89,7 +92,7 @@ const initialSettings = {
     fatalityRate,
     hospitalizationDelayInDays: hospDelay,
     hospitalizationStayInDays: hospStay,
-    hospitalBeds: hospBeds || state.hospitalBeds || 15000,
+    hospitalBeds: hospBeds || region.hospitalBeds || 15000,
 };
 
 const App = props => {

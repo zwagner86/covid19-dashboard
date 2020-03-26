@@ -38,7 +38,7 @@ Your app is ready to be deployed.
 | defaultChartScale | linear                   | Sets default scale for all charts                                                                                  |
 | doublingTime      | 2.3                      | Sets the doubling time                                                                                             |
 | countryCode       | USA                      | Sets the country                                                                                                   |
-| stateCode         | IL                       | Sets the state                                                                                                     |
+| regionCode        | IL                       | Sets the region or state                                                                                                     |
 | population        | 1000000                  | Sets the population.  Defaults to a selected state's population or 1,000,000 if no state found.                    |
 | exposure          | 100                      | Sets the exposure                                                                                                  |
 | startDate         | 7 days before now        | Sets the start date.  Defaults to a state's first data entry date or 7 days before current date if no state found. |

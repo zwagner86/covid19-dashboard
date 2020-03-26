@@ -13,7 +13,7 @@ const initialSettings = {
     defaultChartScale: 'linear',
     doublingTime: 2.3,
     countryCode: 'USA',
-    stateKey: states[0].key,
+    regionKey: states[0].key,
     population: states[0].population,
     exposure: 100,
     startDate,
