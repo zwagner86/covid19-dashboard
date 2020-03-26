@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Main = props => {
-    const {children, disableForm} = props;
+    const {children, disableForm, hideForm} = props;
     const classes = useStyles();
     const theme = useTheme();
     const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
@@ -63,7 +63,7 @@ const Main = props => {
     };
 
     const shouldOpenSidebar =
-        !userToggledSidebar && isDesktop ? true : openSidebar;
+        !userToggledSidebar && isDesktop ? !hideForm : openSidebar;
 
     return (
         <div className={classes.root}>
@@ -89,6 +89,7 @@ const Main = props => {
 Main.propTypes = {
     children: PropTypes.node,
     disableForm: PropTypes.bool,
+    hideForm: PropTypes.bool,
 };
 
 export default Main;

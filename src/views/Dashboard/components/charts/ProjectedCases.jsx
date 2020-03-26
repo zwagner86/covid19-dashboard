@@ -33,10 +33,13 @@ const ProjectedCases = props => {
         projectionsData,
         cdcData,
         population,
+        defaultChartScale,
         ...rest
     } = props;
     const classes = useStyles();
-    const [lineType, setLineType] = useState('linear');
+    const [lineType, setLineType] = useState(
+        defaultChartScale === 'log' ? 'logarithmic' : 'linear'
+    );
 
     const chartDatasets = {
         labels: chartLabels,
@@ -199,6 +202,7 @@ ProjectedCases.propTypes = {
     projectionsData: PropTypes.array.isRequired,
     cdcData: PropTypes.array.isRequired,
     population: PropTypes.number.isRequired,
+    defaultChartScale: PropTypes.oneOf(['linear', 'log']),
 };
 
 export default ProjectedCases;

@@ -9,6 +9,8 @@ const initialSettings = {
     onlyRisk: false,
     onlyCharts: false,
     onlyTables: false,
+    hideHospitalChart: false,
+    defaultChartScale: 'linear',
     doublingTime: 2.3,
     countryCode: 'USA',
     stateKey: states[0].key,

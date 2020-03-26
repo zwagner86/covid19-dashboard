@@ -34,10 +34,13 @@ const Risk = props => {
         chartLabels,
         chartData,
         worryLevel,
+        defaultChartScale,
         ...rest
     } = props;
     const classes = useStyles();
-    const [lineType, setLineType] = useState('linear');
+    const [lineType, setLineType] = useState(
+        defaultChartScale === 'log' ? 'logarithmic' : 'linear'
+    );
 
     const handleChange = event => {
         setLineType(event.target.value);
@@ -176,6 +179,7 @@ Risk.propTypes = {
     chartLabels: PropTypes.array.isRequired,
     chartData: PropTypes.array.isRequired,
     worryLevel: PropTypes.number,
+    defaultChartScale: PropTypes.oneOf(['linear', 'log']),
 };
 
 export default Risk;

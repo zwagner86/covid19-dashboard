@@ -21,41 +21,15 @@ Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
     draw: chartjs.draw,
 });
 
-// TODO: support parameters
-/*
-disableForm - disables form
-onlyCase - only show case model
-onlyRisk - only show risk model
-onlyCharts - only show charts
-onlyTables - only show tables
-
-// settings
-doublingTime
-country
-state
-population
-exposure
-startDate
-numberOfDays
-baseCases
-multiplier
-riskPerDay
-cumRisk
-hospRate
-fatalityRate
-hospDelay
-hospStay
-hospBeds
-
-// add lastDate - then configure number of days from start date
-*/
-
 const {
     disableForm,
+    hideForm,
     onlyCase,
     onlyRisk,
     onlyCharts,
     onlyTables,
+    hideHospitalChart,
+    defaultChartScale = 'linear',
     doublingTime = 2.3,
     countryCode = 'USA',
     stateCode = 'IL',
@@ -98,6 +72,8 @@ const initialSettings = {
     onlyRisk,
     onlyCharts,
     onlyTables,
+    hideHospitalChart,
+    defaultChartScale,
     doublingTime: doublingTime || 2.3,
     countryCode,
     stateKey: state.key,
@@ -123,7 +99,7 @@ const App = props => {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <SettingsProvider value={{settings, setSettings}}>
-                <MainLayout disableForm={disableForm}>
+                <MainLayout disableForm={disableForm} hideForm={hideForm}>
                     <Dashboard />
                 </MainLayout>
             </SettingsProvider>

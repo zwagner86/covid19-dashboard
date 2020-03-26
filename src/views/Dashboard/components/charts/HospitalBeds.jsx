@@ -34,10 +34,13 @@ const HospitalBeds = props => {
         chartLabels,
         chartData,
         hospitalBedCapacity,
+        defaultChartScale,
         ...rest
     } = props;
     const classes = useStyles();
-    const [lineType, setLineType] = useState('linear');
+    const [lineType, setLineType] = useState(
+        defaultChartScale === 'log' ? 'logarithmic' : 'linear'
+    );
 
     const handleChange = event => {
         setLineType(event.target.value);
@@ -176,6 +179,7 @@ HospitalBeds.propTypes = {
     chartLabels: PropTypes.array.isRequired,
     chartData: PropTypes.array.isRequired,
     hospitalBedCapacity: PropTypes.number,
+    defaultChartScale: PropTypes.oneOf(['linear', 'log']),
 };
 
 export default HospitalBeds;

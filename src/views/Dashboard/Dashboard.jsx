@@ -50,6 +50,8 @@ const Dashboard = props => {
             onlyRisk,
             onlyCharts,
             onlyTables,
+            hideHospitalChart,
+            defaultChartScale,
             doublingTime,
             stateKey,
             population,
@@ -327,22 +329,34 @@ const Dashboard = props => {
                         )}
                         {displayCharts && (
                             <Fragment>
-                                <Grid item xs={12} md={6}>
+                                <Grid
+                                    item
+                                    xs={12}
+                                    md={hideHospitalChart ? 12 : 6}
+                                >
                                     <ProjectedCases
                                         chartLabels={projectionsChartLabels}
                                         projectionsData={projectionsChartData}
                                         cdcData={cdcChartData}
                                         population={population}
+                                        defaultChartScale={defaultChartScale}
                                     />
                                 </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <HospitalBeds
-                                        title="Occupied Hospital Beds"
-                                        chartLabels={hospitalBedsChartLabels}
-                                        chartData={hospitalBedsChartData}
-                                        hospitalBedCapacity={hospitalBeds}
-                                    />
-                                </Grid>
+                                {!hideHospitalChart && (
+                                    <Grid item xs={12} md={6}>
+                                        <HospitalBeds
+                                            title="Occupied Hospital Beds"
+                                            chartLabels={
+                                                hospitalBedsChartLabels
+                                            }
+                                            chartData={hospitalBedsChartData}
+                                            hospitalBedCapacity={hospitalBeds}
+                                            defaultChartScale={
+                                                defaultChartScale
+                                            }
+                                        />
+                                    </Grid>
+                                )}
                             </Fragment>
                         )}
                     </Grid>
@@ -436,6 +450,7 @@ const Dashboard = props => {
                                         chartLabels={risk1PlusChartLabels}
                                         chartData={risk1PlusChartData}
                                         worryLevel={cutoffRiskPerDay}
+                                        defaultChartScale={defaultChartScale}
                                     />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
@@ -445,6 +460,7 @@ const Dashboard = props => {
                                         chartLabels={cumulativeRiskChartLabels}
                                         chartData={cumulativeRiskChartData}
                                         worryLevel={cutoffRiskCumulative}
+                                        defaultChartScale={defaultChartScale}
                                     />
                                 </Grid>
                             </Fragment>
