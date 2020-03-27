@@ -1,1 +1,2 @@
-require 'dbf'
+gem 'dbf'
+gem 'linefit', '~> 0.3.4'

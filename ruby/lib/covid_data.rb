@@ -6,7 +6,7 @@ class CovidData
 
   def initialize
     # the keys in each dated record
-    @targets = %w[positive negative pending hospitalized death tests beds population latitude longitude].map { |k| k.to_sym }
+    @date_stat_keys = %w[positive negative pending hospitalized death tests].map { |k| k.to_sym }
     @dir = File.join(File.dirname(__FILE__),'data')
   end
 
