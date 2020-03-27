@@ -1,6 +1,6 @@
 require_relative 'enumerable'
-require_relative 'covid_data/ata/countries/us_states'
-require_relative 'covid_data/ata/countries/us_metros'
+require_relative 'covid_data/us_states'
+require_relative 'covid_data/us_metros'
 
 class CovidData
   # Covid data source parsing
