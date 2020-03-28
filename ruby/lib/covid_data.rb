@@ -8,7 +8,8 @@ class CovidData
   def initialize
     # the keys in each dated record
     @date_stat_keys = %w[positive negative pending hospitalized death tests].map { |k| k.to_sym }
-    @dir = File.join(File.dirname(__FILE__),'data')
+    @dir1 = File.join(File.dirname(__FILE__), 'data')
+    @dir2 = File.join(File.dirname(File.dirname(File.dirname(__FILE__))), 'src', 'data', 'countries')
   end
 
   # TODO: obsolete, I think
@@ -32,12 +33,18 @@ class CovidData
   # end
 
   def save_json(data, name)
-    path = File.join(@dir, 'final', name + '.json')
+    # fix the daily values as a list not a dictionary
     data.each_value do |val|
       val[:dailyData] = val[:dailyData].to_a.sort.map { |d,c| c[:date] = d; c }
     end
-    open(path,'w') { |f| f.puts(JSON.pretty_generate(data)) }
-    puts path
+
+    path1 = File.join(@dir1, 'final', name + '.json')
+    open(path1,'w') { |f| f.puts(JSON.pretty_generate(data)) }
+
+    path2 = File.join(@dir2, name + '.json')
+    open(path2,'w') { |f| f.puts(JSON.pretty_generate(data)) }
+
+    puts path2
   end
 
   def data_finish(stats_data)

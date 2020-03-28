@@ -9,7 +9,7 @@ module USStates
   def us_state_centroid(state)
     @us_state_centroids ||= begin
                               ret = {}
-                              path = File.join(@dir, 'us_states', 'centroids.txt')
+                              path = File.join(@dir1, 'us_states', 'centroids.txt')
                               open(path).each_struct do |record|
                                 ret[record[:state].to_sym] = [record[:lat].to_f, record[:lon].to_f]
                               end
@@ -26,7 +26,7 @@ module USStates
     s = @us_state_beds_struct ||= Struct.new(:hospitals, :beds, :icu_ccb, :occupancy)
     @us_state_beds ||= begin
                          ret = {all: s.new(*([0] * s.members.length))}
-                         path = File.join(@dir, 'us_states', 'beds.txt')
+                         path = File.join(@dir1, 'us_states', 'beds.txt')
                          open(path).each_struct do |record|
                            state = record[:abbreviation].to_sym
                            beds = record[:staffed_beds].gsub(/\D/,'').to_i
@@ -44,7 +44,7 @@ module USStates
     @us_state_population ||= begin
                                s = Struct.new(:hospitals, :beds, :icu_ccb, :occupancy)
                                ret = {}
-                               path = File.join(@dir, 'us_states', 'populations.txt')
+                               path = File.join(@dir1, 'us_states', 'populations.txt')
                                open(path).each_struct do |record|
                                  state = record[:state].strip.to_sym
                                  pop = record[:p2019].gsub(/\D/,'').to_i
