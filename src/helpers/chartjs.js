@@ -44,7 +44,7 @@ function draw() {
         borderSkipped = vm.borderSkipped || 'left';
     }
 
-    // Canvas doesn't allow us to stroke inside the width so we can
+    // Canvas doesn't allow us_states to stroke inside the width so we can
     // adjust the sizes to fit if we're setting a stroke on the line
     if (borderWidth) {
         // borderWidth shold be less than bar width and bar height.
