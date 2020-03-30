@@ -1,3 +1,4 @@
+import get from 'lodash/get';
 import keys from 'lodash/keys';
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
@@ -25,37 +26,42 @@ const CountrySelect = ({field, onSelectChange, ...props}) => {
                 setFieldValue('population', 15000);
                 setFieldValue('regionKey', 'other');
             } else {
-                const regionsToSearch = regions[selectedKey];
+                const regionsToSearch = RegionUtils.getRegionsGroupedByType(
+                    selectedKey
+                );
                 const popsToSearch = [
                     ...regionsToSearch.country,
-                    ...regionsToSearch.regions,
-                    ...regionsToSearch.states,
+                    ...regionsToSearch.region,
+                    ...regionsToSearch.state,
                 ];
-                const region = popsToSearch[0];
+                const region = popsToSearch[1];
 
-                setFieldValue('regionKey', region.key);
+                setFieldValue('regionKey', region.code);
 
-                const regionReportedData = RegionUtils.getRegionInfoByKey({
-                    countryCode: selectedKey,
-                    regionKey: region.key,
-                    fromFirstCase: true,
-                });
-
-                setFieldValue('population', region ? region.population : 15000);
-                setFieldValue(
-                    'hospitalBeds',
-                    region ? region.hospitalBeds : 7000
+                const sortedRegionDailyData = RegionUtils.sortRegionDailyDataByDate(
+                    region,
+                    true
                 );
 
-                if (regionReportedData) {
+                const doublingTime = get(region, 'doublings.positive[0].dt');
+
+                if (doublingTime) {
+                    setFieldValue('doublingTime', doublingTime);
+                }
+
+                setFieldValue('population', region ? region.population : 15000);
+                setFieldValue('hospitalBeds', region ? region.beds : 7000);
+
+                if (sortedRegionDailyData) {
                     setFieldValue(
                         'startDate',
-                        moment(regionReportedData[0].date)
+                        moment(sortedRegionDailyData[0].date)
                     );
 
-                    const baseCases = regionReportedData[0].cases || 1;
-
-                    setFieldValue('baseCases', baseCases);
+                    setFieldValue(
+                        'baseCases',
+                        sortedRegionDailyData[0].positive || 1
+                    );
                 }
             }
         }

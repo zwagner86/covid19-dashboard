@@ -1,4 +1,5 @@
 import find from 'lodash/find';
+import get from 'lodash/get';
 import React, {useState} from 'react';
 import moment from 'moment';
 import queryString from 'query-string';
@@ -8,7 +9,7 @@ import {ThemeProvider} from '@material-ui/styles';
 
 import {chartjs} from './helpers';
 import theme from './theme';
-import regions from './data/regions';
+// import regions from './data/regions';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './App.scss';
 
@@ -30,7 +31,7 @@ const {
     onlyTables,
     hideHospitalChart,
     defaultChartScale = 'linear',
-    doublingTime = 2.3,
+    doublingTime,
     countryCode = 'usa',
     regionCode = 'IL',
     population,
@@ -52,22 +53,29 @@ const {
     parseNumbers: true,
 });
 // TODO: expand on this when other countries are supported
-const regionsToSearch = regions[countryCode.toLowerCase()] || regions.usa;
+const regionsToSearch = RegionUtils.getRegionsGroupedByType(
+    countryCode.toLowerCase() || 'usa'
+);
+// const regionsToSearch = regions[countryCode.toLowerCase()] || regions.usa;
 const popsToSearch = [
     ...regionsToSearch.country,
-    ...regionsToSearch.regions,
-    ...regionsToSearch.states,
+    ...regionsToSearch.region,
+    ...regionsToSearch.state,
 ];
-const region = find(popsToSearch, {key: regionCode}) || popsToSearch[0];
-const initialRegionData = RegionUtils.getRegionInfoByKey({
+const region = find(popsToSearch, {code: regionCode}) || popsToSearch[0];
+/* const initialRegionData = RegionUtils.getRegionInfoByKey({
     countryCode,
     regionKey: region.key,
     fromFirstCase: true,
-});
+}); */
+const sortedRegionDailyData = RegionUtils.sortRegionDailyDataByDate(
+    region,
+    true
+);
 const startDateMoment = startDate
     ? moment(startDate)
-    : initialRegionData
-    ? moment(initialRegionData[0].date)
+    : sortedRegionDailyData
+    ? moment(sortedRegionDailyData[0].date)
     : moment().subtract(7, 'days');
 const lastDateMoment = lastDate
     ? moment(lastDate)
@@ -81,14 +89,17 @@ const initialSettings = {
     onlyTables,
     hideHospitalChart,
     defaultChartScale,
-    doublingTime: doublingTime || 2.3,
+    doublingTime: doublingTime || get(region, 'doublings.positive[0].dt', 2.3),
     countryCode,
-    regionKey: region.key,
+    regionKey: region.code,
     population: population || region.population || 1000000,
     exposure,
     startDate: startDateMoment,
     numberOfDays,
-    baseCases: baseCases || initialRegionData ? initialRegionData[0].cases : 5,
+    baseCases:
+        baseCases || sortedRegionDailyData
+            ? sortedRegionDailyData[0].positive
+            : 5,
     multiplier,
     cutoffRiskPerDay: riskPerDay,
     cutoffRiskCumulative: cumRisk,
@@ -96,7 +107,7 @@ const initialSettings = {
     fatalityRate,
     hospitalizationDelayInDays: hospDelay,
     hospitalizationStayInDays: hospStay,
-    hospitalBeds: hospBeds || region.hospitalBeds || 15000,
+    hospitalBeds: hospBeds || region.beds || 15000,
 };
 
 const App = props => {

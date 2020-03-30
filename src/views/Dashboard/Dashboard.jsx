@@ -147,11 +147,11 @@ const Dashboard = props => {
         };
 
         if (regionData) {
-            const cdcData = find(regionData, {
+            const cdcData = find(regionData.dailyData, {
                 date: dateMoment.format('YYYY-MM-DD'),
             });
             /* eslint-disable no-undefined */
-            const cases = cdcData ? cdcData.cases : undefined;
+            const cases = cdcData ? cdcData.positive : undefined;
             const casesScaled = cdcData ? cases * multiplier : undefined;
             /* eslint-enable no-undefined */
 

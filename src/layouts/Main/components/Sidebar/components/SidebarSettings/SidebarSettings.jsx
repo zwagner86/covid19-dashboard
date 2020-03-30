@@ -84,8 +84,8 @@ const SidebarSettings = ({disableForm}) => {
                     // doublingTime errors
                     if (isNil(doublingTime)) {
                         errors.doublingTime = 'This is a required field.';
-                    } else if (doublingTime < 1 || doublingTime > 3) {
-                        errors.doublingTime = 'Value must be between 1 and 3.';
+                    } else if (doublingTime < 0) {
+                        errors.doublingTime = 'Value must be greater than 0.';
                     }
 
                     // population errors
@@ -225,7 +225,7 @@ const SidebarSettings = ({disableForm}) => {
                                             endAdornment: (
                                                 <InputAdornment position="end">
                                                     <Tooltip
-                                                        title="Between 1 and 3.  Lower is faster."
+                                                        title="0.01 and up.  Lower is faster."
                                                         enterTouchDelay={0}
                                                         arrow
                                                     >
@@ -240,8 +240,7 @@ const SidebarSettings = ({disableForm}) => {
                                         }}
                                         inputProps={{
                                             step: '0.01',
-                                            min: 1,
-                                            max: 3,
+                                            min: 0,
                                             decimalScale: 2,
                                             fixedDecimalScale: true,
                                         }}
