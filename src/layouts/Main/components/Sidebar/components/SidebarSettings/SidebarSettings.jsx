@@ -297,37 +297,6 @@ const SidebarSettings = ({disableForm}) => {
                                     <br />
                                     <Field
                                         className={classes.field}
-                                        component={TextFieldWithNumberFormat}
-                                        name="exposure"
-                                        label="Exposure"
-                                        placeholder="100"
-                                        InputProps={{
-                                            endAdornment: (
-                                                <InputAdornment position="end">
-                                                    <Tooltip
-                                                        title="The people you encounter in a day."
-                                                        enterTouchDelay={0}
-                                                        arrow
-                                                    >
-                                                        <HelpOutlineIcon
-                                                            className={
-                                                                classes.helpIcon
-                                                            }
-                                                        />
-                                                    </Tooltip>
-                                                </InputAdornment>
-                                            ),
-                                        }}
-                                        inputProps={{
-                                            min: 0,
-                                            thousandSeparator: true,
-                                        }}
-                                        disabled={disableForm}
-                                        required
-                                    />
-                                    <br />
-                                    <Field
-                                        className={classes.field}
                                         component={DatePicker}
                                         name="startDate"
                                         label="Start Date"
@@ -462,6 +431,37 @@ const SidebarSettings = ({disableForm}) => {
                                 <ExpansionPanelDetails
                                     className={classes.expansionDetails}
                                 >
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="exposure"
+                                        label="Exposure"
+                                        placeholder="100"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The people you encounter in a day."
+                                                        enterTouchDelay={0}
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 0,
+                                            thousandSeparator: true,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
                                     <Field
                                         className={classes.field}
                                         component={TextFieldWithNumberFormat}
