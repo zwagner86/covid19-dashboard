@@ -186,7 +186,7 @@ exit
 c.us_state_data
 exit
 
-path = File.join(File.dirname(__FILE__), 'data', 'countries', 'us_states.json')
+path = File.join(File.dirname(__FILE__), 'data', 'countries', '_us_states.json')
 c.json(path)
 res = c.us_states.map do |state|
   [c.state_stats(state).split("\n")[-1].split("\t")[1], state]

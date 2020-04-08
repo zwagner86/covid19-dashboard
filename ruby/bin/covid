@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+
+require 'enumerable'
+require 'numeric'
+require 'covid_data'
+require 'covid_cli'
+
+args = ARGV
+# args = ['us_metro', 'Champaign-Urbana, IL'] if args.empty?
+# args = ['us_metro', 'Chicago-Gary-Kenosha, IL-IN-WI'] if args.empty?
+# args = ['us_metro', 'New York-Northern New Jersey-Long Island, NY-NJ'] if args.empty?
+# args = ['us_metro', 'Seattle-Tacoma-Bremerton, WA'] if args.empty?
+# args = ['us_metro',  'San Francisco-Oakland-San Jose, CA'] if args.empty?
+# args = ['stats', 'country', 'United States'] if args.empty?
+c = CovidCLI.start(args)
