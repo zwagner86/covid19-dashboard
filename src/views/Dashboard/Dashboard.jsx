@@ -4,9 +4,9 @@ import React, {Fragment, useContext, useState} from 'react';
 import moment from 'moment';
 import {colors, Grid, Paper, Tabs, Tab} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
-import RegionUtils from '../../utils/region';
-import {MaterialTable} from '../../components';
-import SettingsContext from '../../SettingsContext';
+import RegionUtils from '/utils/region';
+import {MaterialTable} from '/components';
+import SettingsContext from '/SettingsContext';
 import TabPanel from './components/TabPanel';
 import ProjectedCases from './components/charts/ProjectedCases';
 import Risk from './components/charts/Risk';
@@ -147,11 +147,11 @@ const Dashboard = props => {
         };
 
         if (regionData) {
-            const cdcData = find(regionData, {
+            const cdcData = find(regionData.dailyData, {
                 date: dateMoment.format('YYYY-MM-DD'),
             });
             /* eslint-disable no-undefined */
-            const cases = cdcData ? cdcData.cases : undefined;
+            const cases = cdcData ? cdcData.positive : undefined;
             const casesScaled = cdcData ? cases * multiplier : undefined;
             /* eslint-enable no-undefined */
 

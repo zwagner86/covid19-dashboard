@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import states from './data/regions/usa/states';
 
 const startDate = moment('2020-03-06');
 
@@ -13,8 +12,8 @@ const initialSettings = {
     defaultChartScale: 'linear',
     doublingTime: 2.3,
     countryCode: 'USA',
-    regionKey: states[0].key,
-    population: states[0].population,
+    regionKey: 'IL',
+    population: 1000000,
     exposure: 100,
     startDate,
     numberOfDays: 30,

@@ -1,18 +1,27 @@
 import find from 'lodash/find';
+import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import regions from '../../../../../../data/regions';
-// import {makeStyles} from '@material-ui/styles';
+// import regions from '/data/regions';
+import {makeStyles} from '@material-ui/styles';
 import {ListSubheader, MenuItem} from '@material-ui/core';
 import {TextField} from 'formik-material-ui';
-import RegionUtils from '../../../../../../utils/region';
+import RegionUtils from '/utils/region';
+
+const useStyles = makeStyles(theme => ({
+    listGrouping: {
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.primary.contrastText,
+    },
+}));
 
 const MetroSelect = ({field, selectedCountry, onSelectChange, ...props}) => {
+    const classes = useStyles();
     const {onChange: onFieldChange, value} = field;
     const {setFieldValue} = props.form;
-    const countryRegions = regions[selectedCountry];
+    const countryRegions = RegionUtils.getRegionsGroupedByType(selectedCountry);
 
     const onChange = event => {
         const selectedKey = event.target.value;
@@ -25,34 +34,37 @@ const MetroSelect = ({field, selectedCountry, onSelectChange, ...props}) => {
             if (selectedKey === 'other') {
                 setFieldValue('population', 15000); // eslint-disable-line
             } else {
-                const regionsToSearch =
-                    regions[selectedCountry.toLowerCase()] || regions.usa;
+                const regionsToSearch = RegionUtils.getRegionsGroupedByType(
+                    selectedCountry.toLowerCase() || 'usa'
+                );
                 const popsToSearch = [
-                    ...regionsToSearch.regions,
-                    ...regionsToSearch.states,
+                    ...regionsToSearch.region,
+                    ...regionsToSearch.state,
                 ];
-                const region = find(popsToSearch, {key: selectedKey});
-                const regionReportedData = RegionUtils.getRegionInfoByKey({
-                    countryCode: selectedCountry,
-                    regionKey: selectedKey,
-                    fromFirstCase: true,
-                });
+                const region = find(popsToSearch, {code: selectedKey});
+                const sortedRegionDailyData = RegionUtils.sortRegionDailyDataByDate(
+                    region,
+                    true
+                );
+                const doublingTime = get(region, 'doublings.positive[0].dt');
+
+                if (doublingTime) {
+                    setFieldValue('doublingTime', doublingTime);
+                }
 
                 setFieldValue('population', region ? region.population : 15000);
-                setFieldValue(
-                    'hospitalBeds',
-                    region ? region.hospitalBeds : 7000
-                );
+                setFieldValue('hospitalBeds', region ? region.beds : 7000);
 
-                if (regionReportedData) {
+                if (sortedRegionDailyData) {
                     setFieldValue(
                         'startDate',
-                        moment(regionReportedData[0].date)
+                        moment(sortedRegionDailyData[0].date)
                     );
 
-                    const baseCases = regionReportedData[0].cases || 1;
-
-                    setFieldValue('baseCases', baseCases);
+                    setFieldValue(
+                        'baseCases',
+                        sortedRegionDailyData[0].positive || 1
+                    );
                 }
             }
         }
@@ -66,42 +78,42 @@ const MetroSelect = ({field, selectedCountry, onSelectChange, ...props}) => {
     };
 
     return (
-        <TextField select id="metro-area" label="City/Region" {...selectProps}>
+        <TextField select id="metro-area" label="State/Region" {...selectProps}>
             {countryRegions && !isEmpty(countryRegions.country) && (
-                <ListSubheader>
-                    {countryRegions.name || selectedCountry.toUpperCase()}
+                <ListSubheader className={classes.listGrouping}>
+                    Country
+                </ListSubheader>
+            )}
+            {countryRegions && !isEmpty(countryRegions.country) && (
+                <MenuItem key="all" value="all">
+                    {countryRegions.country[0].name || 'All'}
+                </MenuItem>
+            )}
+            {countryRegions && !isEmpty(countryRegions.state) && (
+                <ListSubheader className={classes.listGrouping}>
+                    States
                 </ListSubheader>
             )}
             {countryRegions &&
-                !isEmpty(countryRegions.country) &&
-                countryRegions.country.map(countryObj => {
+                !isEmpty(countryRegions.state) &&
+                countryRegions.state.map(stateObj => {
                     return (
-                        <MenuItem key={countryObj.key} value={countryObj.key}>
-                            {countryObj.name}
+                        <MenuItem key={stateObj.code} value={stateObj.code}>
+                            {stateObj.name || stateObj.code}
                         </MenuItem>
                     );
                 })}
-            {countryRegions && !isEmpty(countryRegions.states) && (
-                <ListSubheader>States</ListSubheader>
+            {countryRegions && !isEmpty(countryRegions.region) && (
+                <ListSubheader className={classes.listGrouping}>
+                    Regions
+                </ListSubheader>
             )}
             {countryRegions &&
-                !isEmpty(countryRegions.states) &&
-                countryRegions.states.map(stateObj => {
+                !isEmpty(countryRegions.region) &&
+                countryRegions.region.map(regionObj => {
                     return (
-                        <MenuItem key={stateObj.key} value={stateObj.key}>
-                            {stateObj.name}
-                        </MenuItem>
-                    );
-                })}
-            {countryRegions && !isEmpty(countryRegions.regions) && (
-                <ListSubheader>Regions</ListSubheader>
-            )}
-            {countryRegions &&
-                !isEmpty(countryRegions.regions) &&
-                countryRegions.regions.map(stateObj => {
-                    return (
-                        <MenuItem key={stateObj.key} value={stateObj.key}>
-                            {stateObj.name}
+                        <MenuItem key={regionObj.code} value={regionObj.code}>
+                            {regionObj.name || regionObj.code}
                         </MenuItem>
                     );
                 })}

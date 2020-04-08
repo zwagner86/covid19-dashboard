@@ -9,8 +9,9 @@
 .prettierignore
 .stylelintrc
 src/images/*
-src/data/countries_raw
+src/data/countries/*
 data_prep.rb
+ruby/*
 dist/*
 .cache/*
 node_modules/*
