@@ -6,6 +6,7 @@ import map from 'lodash/map';
 import sortBy from 'lodash/sortBy';
 import React from 'react';
 import {render} from 'react-dom';
+import https from 'https';
 import moment from 'moment';
 import queryString from 'query-string';
 import {Chart} from 'react-chartjs-2';
@@ -18,6 +19,13 @@ import './index.scss';
 
 Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
     draw: chartjs.draw,
+});
+
+const API = axios.create({
+    baseURL: 'https://coronamodel.com/standalone/covid19-dashboard/',
+    httpsAgent: new https.Agent({
+        rejectUnauthorized: false,
+    }),
 });
 
 const renderApp = loadingError => {
@@ -125,9 +133,7 @@ const sortDataByKey = data => {
 // fetch all data
 const getCountryData = async () => {
     try {
-        const response = await axios.get(
-            'https://coronamodel.com/standalone/covid19-dashboard/country.json'
-        );
+        const response = await API.get('country.json');
 
         return response.data;
     } catch (error) {
@@ -137,9 +143,7 @@ const getCountryData = async () => {
 
 const getStateData = async () => {
     try {
-        const response = await axios.get(
-            'https://coronamodel.com/standalone/covid19-dashboard/us_state.json'
-        );
+        const response = await API.get('us_state.json');
 
         return response.data;
     } catch (error) {
@@ -149,9 +153,7 @@ const getStateData = async () => {
 
 const getMetroData = async () => {
     try {
-        const response = await axios.get(
-            'https://coronamodel.com/standalone/covid19-dashboard/us_metro.json'
-        );
+        const response = await API.get('us_metro.json');
 
         return response.data;
     } catch (error) {
