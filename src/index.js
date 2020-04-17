@@ -126,7 +126,7 @@ const sortDataByKey = data => {
 const getCountryData = async () => {
     try {
         const response = await axios.get(
-            'http://coronamodel.com/standalone/covid19-dashboard/country.json'
+            'https://coronamodel.com/standalone/covid19-dashboard/country.json'
         );
 
         return response.data;
@@ -138,7 +138,7 @@ const getCountryData = async () => {
 const getStateData = async () => {
     try {
         const response = await axios.get(
-            'http://coronamodel.com/standalone/covid19-dashboard/us_state.json'
+            'https://coronamodel.com/standalone/covid19-dashboard/us_state.json'
         );
 
         return response.data;
@@ -150,7 +150,7 @@ const getStateData = async () => {
 const getMetroData = async () => {
     try {
         const response = await axios.get(
-            'http://coronamodel.com/standalone/covid19-dashboard/us_metro.json'
+            'https://coronamodel.com/standalone/covid19-dashboard/us_metro.json'
         );
 
         return response.data;
