@@ -6,7 +6,6 @@ import map from 'lodash/map';
 import sortBy from 'lodash/sortBy';
 import React from 'react';
 import {render} from 'react-dom';
-import https from 'https';
 import moment from 'moment';
 import queryString from 'query-string';
 import {Chart} from 'react-chartjs-2';
@@ -22,10 +21,7 @@ Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
 });
 
 const API = axios.create({
-    baseURL: 'http://coronamodel.com/standalone/covid19-dashboard/',
-    httpsAgent: new https.Agent({
-        rejectUnauthorized: false,
-    }),
+    baseURL: 'https://corona-model-proxy.herokuapp.com/',
 });
 
 const renderApp = loadingError => {
@@ -133,7 +129,7 @@ const sortDataByKey = data => {
 // fetch all data
 const getCountryData = async () => {
     try {
-        const response = await API.get('country.json');
+        const response = await API.get('country');
 
         return response.data;
     } catch (error) {
@@ -143,7 +139,7 @@ const getCountryData = async () => {
 
 const getStateData = async () => {
     try {
-        const response = await API.get('us_state.json');
+        const response = await API.get('us_state');
 
         return response.data;
     } catch (error) {
@@ -153,7 +149,7 @@ const getStateData = async () => {
 
 const getMetroData = async () => {
     try {
-        const response = await API.get('us_metro.json');
+        const response = await API.get('us_metro');
 
         return response.data;
     } catch (error) {
