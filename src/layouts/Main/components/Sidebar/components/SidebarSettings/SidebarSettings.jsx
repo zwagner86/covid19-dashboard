@@ -2,8 +2,6 @@
 /* eslint-disable react/display-name */
 import isNil from 'lodash/isNil';
 import React, {Fragment, useContext} from 'react';
-// import clsx from 'clsx';
-// import moment from 'moment';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/styles';
 import {
@@ -24,8 +22,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import MomentUtils from '@date-io/moment';
 import TextFieldWithNumberFormat from './TextFieldWithNumberFormat';
-import CountrySelect from './CountrySelect';
-import MetroSelect from './MetroSelect';
+import PopulationAutocomplete from './PopulationAutocomplete';
 import SettingsContext from '/SettingsContext';
 
 const useStyles = makeStyles(theme => ({
@@ -194,7 +191,14 @@ const SidebarSettings = ({disableForm}) => {
                 }}
                 validateOnChange={false}
                 onSubmit={(values, {setSubmitting}) => {
-                    setSettings(values);
+                    const {populationObj} = values;
+                    const valuesToSet = {
+                        ...values,
+                        populationCode: populationObj?.code,
+                        populationType: populationObj?.type,
+                    };
+
+                    setSettings(valuesToSet);
                     setSubmitting(false);
                 }}
             >
@@ -215,6 +219,43 @@ const SidebarSettings = ({disableForm}) => {
                                 <ExpansionPanelDetails
                                     className={classes.expansionDetails}
                                 >
+                                    <Field
+                                        className={classes.field}
+                                        component={PopulationAutocomplete}
+                                        name="populationObj"
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <Field
+                                        className={classes.field}
+                                        component={TextFieldWithNumberFormat}
+                                        name="population"
+                                        label="Population"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <Tooltip
+                                                        title="The population of your metro area."
+                                                        enterTouchDelay={0}
+                                                        arrow
+                                                    >
+                                                        <HelpOutlineIcon
+                                                            className={
+                                                                classes.helpIcon
+                                                            }
+                                                        />
+                                                    </Tooltip>
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                        inputProps={{
+                                            min: 1,
+                                            thousandSeparator: true,
+                                        }}
+                                        disabled={disableForm}
+                                        required
+                                    />
+                                    <br />
                                     <Field
                                         className={classes.field}
                                         component={TextFieldWithNumberFormat}
@@ -243,53 +284,6 @@ const SidebarSettings = ({disableForm}) => {
                                             min: 0,
                                             decimalScale: 2,
                                             fixedDecimalScale: true,
-                                        }}
-                                        disabled={disableForm}
-                                        required
-                                    />
-                                    <br />
-                                    <Field
-                                        className={classes.field}
-                                        component={CountrySelect}
-                                        name="countryCode"
-                                        disabled={disableForm}
-                                        required
-                                    />
-                                    <br />
-                                    <Field
-                                        className={classes.field}
-                                        component={MetroSelect}
-                                        name="regionKey"
-                                        selectedCountry={values.countryCode}
-                                        disabled={disableForm}
-                                        required
-                                    />
-                                    <br />
-                                    <Field
-                                        className={classes.field}
-                                        component={TextFieldWithNumberFormat}
-                                        name="population"
-                                        label="Population"
-                                        InputProps={{
-                                            endAdornment: (
-                                                <InputAdornment position="end">
-                                                    <Tooltip
-                                                        title="The population of your metro area."
-                                                        enterTouchDelay={0}
-                                                        arrow
-                                                    >
-                                                        <HelpOutlineIcon
-                                                            className={
-                                                                classes.helpIcon
-                                                            }
-                                                        />
-                                                    </Tooltip>
-                                                </InputAdornment>
-                                            ),
-                                        }}
-                                        inputProps={{
-                                            min: 1,
-                                            thousandSeparator: true,
                                         }}
                                         disabled={disableForm}
                                         required
