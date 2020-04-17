@@ -1,4 +1,5 @@
 import find from 'lodash/find';
+import isNil from 'lodash/isNil';
 import range from 'lodash/range';
 import React, {Fragment, useContext, useState} from 'react';
 import moment from 'moment';
@@ -162,7 +163,9 @@ const Dashboard = props => {
             projection.cdcCases = cases;
             projection.cdcCasesScaled = casesScaled;
 
-            cdcChartData.push(casesScaled);
+            if (!isNil(casesScaled)) {
+                cdcChartData.push(casesScaled);
+            }
         }
 
         projectionData.push(projection);

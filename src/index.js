@@ -20,8 +20,12 @@ Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
     draw: chartjs.draw,
 });
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const API = axios.create({
-    baseURL: 'https://corona-model-proxy.herokuapp.com/',
+    baseURL: isProduction
+        ? 'https://corona-model-proxy.herokuapp.com/'
+        : 'http://coronamodel.com/standalone/covid19-dashboard/',
 });
 
 const renderApp = loadingError => {
@@ -129,7 +133,9 @@ const sortDataByKey = data => {
 // fetch all data
 const getCountryData = async () => {
     try {
-        const response = await API.get('country');
+        const response = await API.get(
+            `country${!isProduction ? '.json' : ''}`
+        );
 
         return response.data;
     } catch (error) {
@@ -139,7 +145,9 @@ const getCountryData = async () => {
 
 const getStateData = async () => {
     try {
-        const response = await API.get('us_state');
+        const response = await API.get(
+            `us_state${!isProduction ? '.json' : ''}`
+        );
 
         return response.data;
     } catch (error) {
@@ -149,7 +157,9 @@ const getStateData = async () => {
 
 const getMetroData = async () => {
     try {
-        const response = await API.get('us_metro');
+        const response = await API.get(
+            `us_metro${!isProduction ? '.json' : ''}`
+        );
 
         return response.data;
     } catch (error) {
