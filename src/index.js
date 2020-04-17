@@ -22,7 +22,7 @@ Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
 });
 
 const API = axios.create({
-    baseURL: 'https://coronamodel.com/standalone/covid19-dashboard/',
+    baseURL: 'http://coronamodel.com/standalone/covid19-dashboard/',
     httpsAgent: new https.Agent({
         rejectUnauthorized: false,
     }),
